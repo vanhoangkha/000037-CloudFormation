@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Truy cập khi mất Keypair on AWS Cloudformation Workshop</title>
+    <link>/vi/2-aws-cloudformation-advance/2-mapping-and-stacksets/</link>
+    <description>Recent content in Truy cập khi mất Keypair on AWS Cloudformation Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 18 Apr 2020 00:38:32 +0700</lastBuildDate>
+    
+	<atom:link href="/vi/2-aws-cloudformation-advance/2-mapping-and-stacksets/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

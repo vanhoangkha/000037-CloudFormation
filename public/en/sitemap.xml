@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/2-aws-cloudformation-advance/1-cloudformation-with-custom-resources/</loc>
+    <lastmod>2020-04-18T00:38:32+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-aws-cloudformation-advance/1-cloudformation-with-custom-resources/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-aws-cloudformation-advance/1-cloudformation-with-custom-resources/"
+                />
+  </url>
+  
+  <url>
+    <loc>/1-aws-cloudformation-basic/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/1-aws-cloudformation-basic/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/1-aws-cloudformation-basic/"
+                />
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+  </url>
+  
+  <url>
+    <loc>/2-aws-cloudformation-advance/</loc>
+    <lastmod>2020-04-18T00:38:32+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-aws-cloudformation-advance/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-aws-cloudformation-advance/"
+                />
+  </url>
+  
+  <url>
+    <loc>/2-aws-cloudformation-advance/2-mapping-and-stacksets/</loc>
+    <lastmod>2020-04-18T00:38:32+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-aws-cloudformation-advance/2-mapping-and-stacksets/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-aws-cloudformation-advance/2-mapping-and-stacksets/"
+                />
+  </url>
+  
+  <url>
+    <loc>/2-aws-cloudformation-advance/3-drift-detection/</loc>
+    <lastmod>2020-04-18T00:38:32+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-aws-cloudformation-advance/3-drift-detection/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-aws-cloudformation-advance/3-drift-detection/"
+                />
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/"
+                />
+  </url>
+  
+</urlset>

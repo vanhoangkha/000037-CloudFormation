@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2.1.5. Build Simple Lab on Getting Started on AWS</title>
+    <link>/2-vpc-setup/1-create-vpc/5-build-simple-lab/</link>
+    <description>Recent content in 2.1.5. Build Simple Lab on Getting Started on AWS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 18 Apr 2020 00:39:21 +0700</lastBuildDate>
+    
+	<atom:link href="/2-vpc-setup/1-create-vpc/5-build-simple-lab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
