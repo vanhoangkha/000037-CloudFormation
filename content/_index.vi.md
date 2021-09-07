@@ -2,7 +2,7 @@
 title = "AWS CloudFormation Workshop"
 date = 2020
 weight = 1
-chapter = true
+chapter = false
 +++
 
 # AWS CloudFormation Workshop
@@ -31,12 +31,12 @@ Gói Cloud9 cơ bản bao gồm các công cụ cần thiết cho những ngôn 
 Xuyên suốt bài thực hành chúng ta sẽ cùng nhau tìm hiểu và thực hành những tính năng từ cơ bản cho tới nâng cao của AWS CloudFormation, sử dụng một IDE tương đối hữu ích và mạnh mẽ đó là AWS Cloud9. 
 Cụ thể nội dung các phần như sau:
 
-[1] [AWS CloudFormation Cơ bản](http://localhost:1313/1-aws-cloudformation-basic/)  
+[1] [AWS CloudFormation Cơ bản](1-aws-cloudformation-basic/)  
 
-[2] [AWS CloudFormation Nâng cao](http://localhost:1313/2-aws-cloudformation-advance/)  
+[2] [AWS CloudFormation Nâng cao](2-aws-cloudformation-advance/)  
 
-[2.1] [Lab 1: Các Tài nguyên Tùy chỉnh](http://localhost:1313/2-aws-cloudformation-advance/1-cloudformation-with-custom-resources/) 
+[2.1] [Các Tài nguyên Tùy chỉnh](2-aws-cloudformation-advance/1-cloudformation-with-custom-resources/) 
 
-[2.2] [Lab 2: Ánh xạ và StackSets](http://localhost:1313/2-aws-cloudformation-advance/2-mapping-and-stacksets/)
+[2.2] [Ánh xạ và StackSets](2-aws-cloudformation-advance/2-mapping-and-stacksets/)
 
-[2.3] [Lab 3: Drift Dectection](http://localhost:1313/2-aws-cloudformation-advance/3-drift-detection/)
+[2.3] [Drift Dectection](2-aws-cloudformation-advance/3-drift-detection/)

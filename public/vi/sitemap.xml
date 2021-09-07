@@ -18,6 +18,21 @@
   </url>
   
   <url>
+    <loc>/vi/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/"
+                />
+  </url>
+  
+  <url>
     <loc>/vi/1-aws-cloudformation-basic/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
@@ -33,17 +48,17 @@
   </url>
   
   <url>
-    <loc>/vi/</loc>
+    <loc>/vi/1-aws-cloudformation-basic/1.1-cloud9/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="/1-aws-cloudformation-basic/1.1-cloud9/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/"
+                href="/vi/1-aws-cloudformation-basic/1.1-cloud9/"
                 />
   </url>
   
@@ -74,6 +89,21 @@
                 rel="alternate"
                 hreflang="vi"
                 href="/vi/2-aws-cloudformation-advance/2-mapping-and-stacksets/"
+                />
+  </url>
+  
+  <url>
+    <loc>/vi/1-aws-cloudformation-basic/1.2-cloudtemplate/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/1-aws-cloudformation-basic/1.2-cloudtemplate/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/1-aws-cloudformation-basic/1.2-cloudtemplate/"
                 />
   </url>
   

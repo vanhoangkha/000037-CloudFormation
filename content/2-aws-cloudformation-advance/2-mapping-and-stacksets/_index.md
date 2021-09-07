@@ -1,20 +1,19 @@
 +++
-title = "Lab 2: Ánh xạ và StackSets"
+title = "Ánh xạ và StackSets"
 date = 2020-04-18T00:38:32+07:00
 weight = 2
-chapter = true
+chapter = false
 pre = "<b>2.2. </b>"
 +++
-
-# Lab 2: Ánh xạ và StackSets
 ---
-## Ánh xạ
+
+#### Ánh xạ
 
 Phần ánh xạ trong CloudFormation template có ý nghĩa trong việc gán một key với một tập các giá trị tương ứng.  
 Ví dụ: nếu bạn muốn thiết lập các giá trị dựa theo region, bạn có thể tạo ánh xạ giữa region đóng vai trò là key với các giá trị chỉ định nằm trong region mà template được triển khai.  
 Điều này có thể đặc biệt hữu ích khi triển khai các gói cài đặt AMI cho global, đó là trường hợp mà ID của các AMI là khác nhau giữa các khu vực.
 
-## StackSets
+#### StackSets
 
 [AWS CloudFormation StackSets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html) giúp mở rộng chức năng của Stack bằng cách cho phép bạn tạo, cập nhật hoặc xóa Stack nằm trên trên nhiều Account hoặc trên nhiều Region chỉ với một thao tác duy nhất.  
 Sử dụng User có quyền quản trị, bạn có thể định nghĩa và quản lý một AWS CloudFormation template, đồng thời sử dụng template này làm cơ sở để triển khai Stack lên các Account và Region mà ta mong muốn.  

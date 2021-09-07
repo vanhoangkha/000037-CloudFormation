@@ -1,12 +1,10 @@
 +++
-title = "Lab 3: Drift Dectection"
+title = "Drift Dectection"
 date = 2020-04-18T00:38:32+07:00
 weight = 3
-chapter = true
+chapter = false
 pre = "<b>2.3. </b>"
 +++
-
-# Lab 3: Drift Dectection
 
 AWS CloudFormation cho phép bạn phát hiện sự thay đổi cấu hình về mặt tài nguyên của Stack gây ra bởi AWS Management Console, CLI, và SDKs.
 Drift là sự khác biệt giữa cấu hình tài nguyên dự kiến của Stack xác định bởi các CloudFormation template với cấu hình tài nguyên thực tế của nó trên CloudFormation.  

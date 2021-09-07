@@ -1,12 +1,11 @@
 +++
-title = "Lab 1: Các Tài nguyên Tùy chỉnh"
+title = "Các Tài nguyên Tùy chỉnh"
 date = 2020-04-18T00:38:32+07:00
 weight = 1
-chapter = true
+chapter = false
 pre = "<b>2.1. </b>"
 +++
-  
-# Lab 1: Các Tài nguyên Tùy chỉnh
+
 ---
 Bạn có thể mở rộng khả năng sử dụng của CloudFormation với các tài nguyên tùy chỉnh bằng cách ủy quyền công việc cần thực hiện cho một hàm Lambda đã được thiết kế đặc biệt, để tương tác với dịch vụ CloudFormation.  
 Trong nội dung của mã code, bạn sẽ cài đặt các hàm tạo, cập nhật và xóa, và hàm gửi phản hồi về trạng thái của hoạt động đó.
