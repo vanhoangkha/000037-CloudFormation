@@ -6,8 +6,6 @@ chapter = false
 pre = "<b>1. </b>"
 +++
 
-# CloudFormation Cơ bản
-
 {{% notice tip %}}
 Lưu ý: trình duyệt đối với Windows như Chrome, Firefox, hoặc Edge phải là phiên bản mới nhất; cũng như vậy với  Apple Safari trên macOS
 {{% /notice %}}

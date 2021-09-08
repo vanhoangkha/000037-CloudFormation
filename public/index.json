@@ -18,7 +18,7 @@
 	"title": "CloudFormation Cơ bản",
 	"tags": [],
 	"description": "",
-	"content": "CloudFormation Cơ bản Lưu ý: trình duyệt đối với Windows như Chrome, Firefox, hoặc Edge phải là phiên bản mới nhất; cũng như vậy với Apple Safari trên macOS\n\rNội dung  Khởi tạo môi trường Cloud9 Xây dựng CloudFormation template  "
+	"content": "\rLưu ý: trình duyệt đối với Windows như Chrome, Firefox, hoặc Edge phải là phiên bản mới nhất; cũng như vậy với Apple Safari trên macOS\n\rNội dung  Khởi tạo môi trường Cloud9 Xây dựng CloudFormation template  "
 },
 {
 	"uri": "/1-aws-cloudformation-basic/1.1-cloud9/",
