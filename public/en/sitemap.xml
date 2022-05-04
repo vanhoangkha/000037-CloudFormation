@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>/2-aws-cloudformation-advance/1-cloudformation-with-custom-resources/</loc>
-    <lastmod>2020-04-18T00:38:32+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/2-aws-cloudformation-advance/1-cloudformation-with-custom-resources/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/2-aws-cloudformation-advance/1-cloudformation-with-custom-resources/"
-                />
-  </url>
-  
   <url>
     <loc>/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -30,99 +13,187 @@
                 hreflang="en"
                 href="/"
                 />
-  </url>
-  
-  <url>
-    <loc>/1-aws-cloudformation-basic/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+  </url><url>
+    <loc>/2-prerequiste/2.1-createiamuser/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-aws-cloudformation-basic/"
+                href="/vi/2-prerequiste/2.1-createiamuser/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-aws-cloudformation-basic/"
+                href="/2-prerequiste/2.1-createiamuser/"
                 />
-  </url>
-  
-  <url>
-    <loc>/1-aws-cloudformation-basic/1.1-cloud9/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+  </url><url>
+    <loc>/4-cloudformationadvance/4.1-customresource/4.1.1-createlambdafunction/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-aws-cloudformation-basic/1.1-cloud9/"
+                href="/vi/4-cloudformationadvance/4.1-customresource/4.1.1-createlambdafunction/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-aws-cloudformation-basic/1.1-cloud9/"
+                href="/4-cloudformationadvance/4.1-customresource/4.1.1-createlambdafunction/"
                 />
-  </url>
-  
-  <url>
-    <loc>/2-aws-cloudformation-advance/</loc>
-    <lastmod>2020-04-18T00:38:32+07:00</lastmod>
+  </url><url>
+    <loc>/3-cloudformationbasic/3.1-createawscloud9/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-aws-cloudformation-advance/"
+                href="/vi/3-cloudformationbasic/3.1-createawscloud9/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-aws-cloudformation-advance/"
+                href="/3-cloudformationbasic/3.1-createawscloud9/"
                 />
-  </url>
-  
-  <url>
-    <loc>/2-aws-cloudformation-advance/2-mapping-and-stacksets/</loc>
-    <lastmod>2020-04-18T00:38:32+07:00</lastmod>
+  </url><url>
+    <loc>/4-cloudformationadvance/4.1-customresource/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-aws-cloudformation-advance/2-mapping-and-stacksets/"
+                href="/vi/4-cloudformationadvance/4.1-customresource/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-aws-cloudformation-advance/2-mapping-and-stacksets/"
+                href="/4-cloudformationadvance/4.1-customresource/"
                 />
-  </url>
-  
-  <url>
-    <loc>/1-aws-cloudformation-basic/1.2-cloudtemplate/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+  </url><url>
+    <loc>/1-introduce/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-aws-cloudformation-basic/1.2-cloudtemplate/"
+                href="/vi/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-aws-cloudformation-basic/1.2-cloudtemplate/"
+                href="/1-introduce/"
                 />
-  </url>
-  
-  <url>
-    <loc>/2-aws-cloudformation-advance/3-drift-detection/</loc>
-    <lastmod>2020-04-18T00:38:32+07:00</lastmod>
+  </url><url>
+    <loc>/3-cloudformationbasic/3.2-createcloudformationtemplate/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-aws-cloudformation-advance/3-drift-detection/"
+                href="/vi/3-cloudformationbasic/3.2-createcloudformationtemplate/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-aws-cloudformation-advance/3-drift-detection/"
+                href="/3-cloudformationbasic/3.2-createcloudformationtemplate/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/2-prerequiste/2.2-createiamrole/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-prerequiste/2.2-createiamrole/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-prerequiste/2.2-createiamrole/"
+                />
+  </url><url>
+    <loc>/4-cloudformationadvance/4.1-customresource/4.1.2-createstack/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-cloudformationadvance/4.1-customresource/4.1.2-createstack/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-cloudformationadvance/4.1-customresource/4.1.2-createstack/"
+                />
+  </url><url>
+    <loc>/4-cloudformationadvance/4.2-stackset/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-cloudformationadvance/4.2-stackset/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-cloudformationadvance/4.2-stackset/"
+                />
+  </url><url>
+    <loc>/2-prerequiste/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-prerequiste/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-prerequiste/"
+                />
+  </url><url>
+    <loc>/3-cloudformationbasic/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/3-cloudformationbasic/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/3-cloudformationbasic/"
+                />
+  </url><url>
+    <loc>/4-cloudformationadvance/4.1-customresource/4.1.3-accessinstance/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-cloudformationadvance/4.1-customresource/4.1.3-accessinstance/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-cloudformationadvance/4.1-customresource/4.1.3-accessinstance/"
+                />
+  </url><url>
+    <loc>/4-cloudformationadvance/4.3-driftdetection/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-cloudformationadvance/4.3-driftdetection/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-cloudformationadvance/4.3-driftdetection/"
+                />
+  </url><url>
+    <loc>/4-cloudformationadvance/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-cloudformationadvance/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-cloudformationadvance/"
+                />
+  </url><url>
+    <loc>/5-cleanup/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/5-cleanup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/5-cleanup/"
+                />
+  </url><url>
     <loc>/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -134,9 +205,7 @@
                 hreflang="en"
                 href="/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -149,5 +218,4 @@
                 href="/tags/"
                 />
   </url>
-  
 </urlset>

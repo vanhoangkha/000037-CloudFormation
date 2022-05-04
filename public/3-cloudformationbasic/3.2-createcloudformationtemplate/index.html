@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Create CloudFormation Template :: AWS CloudFormation Workshop</title>
+
+    
+    <link href="/css/nucleus.css?1651631461" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651631461" rel="stylesheet">
+    <link href="/css/hybrid.css?1651631461" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651631461" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651631461" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651631461" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651631461" rel="stylesheet">
+    <link href="/css/theme.css?1651631461" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651631461" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1651631461" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1651631461"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/3-cloudformationbasic/3.2-createcloudformationtemplate/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1651631461"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651631461"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1651631461"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-introduce/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-introduce/">
+           <b> 1. </b> Introduction
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/" title="Preparation steps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/">
+           <b> 2. </b> Preparation steps
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.1-createiamuser/" title="Create IAM User" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.1-createiamuser/">
+           <b> 2.1 </b> Create IAM User
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prerequiste/2.2-createiamrole/" title="Create IAM Role" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prerequiste/2.2-createiamrole/">
+           <b> 2.2 </b> Create IAM Role
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-cloudformationbasic/" title="Basic CloudFormation" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/3-cloudformationbasic/">
+           <b> 3. </b> Basic CloudFormation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-cloudformationbasic/3.1-createawscloud9/" title="Create Workspace" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-cloudformationbasic/3.1-createawscloud9/">
+           <b> 3.1 </b> Create Workspace
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-cloudformationbasic/3.2-createcloudformationtemplate/" title="Create CloudFormation Template" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/3-cloudformationbasic/3.2-createcloudformationtemplate/">
+           <b> 3.2 </b> Create CloudFormation Template
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-cloudformationadvance/" title="Advanced CloudFormation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-cloudformationadvance/">
+           <b> 4. </b> Advanced CloudFormation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-cloudformationadvance/4.1-customresource/" title="Custom Resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-cloudformationadvance/4.1-customresource/">
+           <b> 4.1 </b> Custom Resources
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-cloudformationadvance/4.1-customresource/4.1.1-createlambdafunction/" title="Create Lambda Function" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-cloudformationadvance/4.1-customresource/4.1.1-createlambdafunction/">
+           <b> 4.1.1 </b> Create Lambda Function
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-cloudformationadvance/4.1-customresource/4.1.2-createstack/" title="Create Stack" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-cloudformationadvance/4.1-customresource/4.1.2-createstack/">
+           <b> 4.1.2 </b> Create Stack
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-cloudformationadvance/4.1-customresource/4.1.3-accessinstance/" title="Connecting EC2 Instance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-cloudformationadvance/4.1-customresource/4.1.3-accessinstance/">
+           <b> 4.1.3 </b> Connecting EC2 Instance
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-cloudformationadvance/4.2-stackset/" title="Mappings and Stacksets" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-cloudformationadvance/4.2-stackset/">
+           <b> 4.2 </b> Mappings and Stacksets
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-cloudformationadvance/4.3-driftdetection/" title="Drift Detection" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-cloudformationadvance/4.3-driftdetection/">
+           <b> 4.3 </b> Drift Detection
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-cleanup/" title="Clean up resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-cleanup/">
+           <b> 5. </b> Clean up resources
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/3-cloudformationbasic/3.2-createcloudformationtemplate/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="/vi/3-cloudformationbasic/3.2-createcloudformationtemplate/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>03-05-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> 
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>AWS CloudFormation</a> > <a href='/3-cloudformationbasic/'>Basic CloudFormation</a> > Create CloudFormation Template
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Create CloudFormation Template
+            </h1>
+          
+
+        
+
+
+
+	<p>One of the keys to working effectively with CloudFormation is knowing how to use the resource reference table on the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS Resource and Property Types Reference</a>. Here you can find a list of information and definitions of resources and properties.</p>
+<ol>
+<li>In the environment view of <strong>AWS Cloud9</strong></li>
+</ol>
+<ul>
+<li>Select <strong>File</strong></li>
+<li>Select <strong>New File</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/0001-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="2">
+<li>A CloudFormation template usually consists of 9 parts, details of which you can see in <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>. Within the workshop, we are only interested in the following 5 main components:</li>
+</ol>
+<ul>
+<li><em>The structure of a CloudFormation template</em></li>
+</ul>
+<p><strong>AWSTemplateFormatVersion (optional)</strong>: Indicates the version of the template. The latest version is 2010-09-09 and although it was released a long time ago, it is still used until now.</p>
+<p><strong>Description (optional)</strong> describes information related to the template.</p>
+<p><strong>Parameters (optional)</strong>: allows you to add optional values ​​to the template each time you need to create or update the stack.</p>
+<p><strong>Resources (required)</strong>: specify which AWS resources you want to put on the stack for deployment, such as an Amazon EC2 instance or an Amazon S3 bucket.</p>
+<p><strong>Outputs (optional)</strong> defines output values ​​that you can import into other stacks (to create cross-stack references), or as stack responses, or for display on AWS CloudFormation console.</p>
+<ul>
+<li><em>Template Parameters</em></li>
+</ul>
+<p>For each parameter we must specify the name and type for the parameter. Supported parameter types include: String, Number, CommaDelimitedList, List, AWS-Specific Parameter and SSM Parameter. Below are some parameters we use in the workshop. These include</p>
+<p><strong>EC2InstanceType</strong> - defines the Instance type to be used in the template.</p>
+<p><strong>LatestAmiId</strong> - allows to automatically get the latest AMI ID and include it in the template.</p>
+<p><strong>SubnetID</strong> - lists all available Subnet IDs available in the region.</p>
+<p><strong>SourceLocation</strong> - specifies how to use regex in the AllowedPattern property to ensure that the input is appropriate, along with the MinLength and MaxLength values.</p>
+<p><strong>VPCID</strong> - lists available VPCs in the region.</p>
+<ul>
+<li>Set the file name <strong>singleec2instance.yaml</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/0002-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="3">
+<li>Paste the content below into the New File window</li>
+</ol>
+<pre tabindex="0"><code>AWSTemplateFormatVersion: &quot;2010-09-09&quot;
+Description: &quot;Deploy Single EC2 Linux Instance as part of MGT312 Workshop&quot;
+Parameters:
+  EC2InstanceType:
+    AllowedValues:
+      - t3.nano
+      - t3.micro
+      - t3.small
+      - t3.medium
+      - t3.large
+      - t3.xlarge
+      - t3.2xlarge
+      - m5.large
+      - m5.xlarge
+      - m5.2xlarge
+    Default: t3.small
+    Description: Amazon EC2 instance type
+    Type: String
+  LatestAmiId:
+    Type: 'AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;'
+    Default: &quot;/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2&quot;
+  SubnetID:
+    Description: ID of a Subnet.
+    Type: AWS::EC2::Subnet::Id
+  SourceLocation:
+    Description : The CIDR IP address range that can be used to RDP to the EC2 instances
+    Type: String
+    MinLength: 9
+    MaxLength: 18
+    Default: 0.0.0.0/0
+    AllowedPattern: &quot;(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3 })/(\\d{1,2})&quot;
+    ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
+  VPCID:
+    Description: ID of the target VPC (e.g., vpc-0343606e).
+    Type: AWS::EC2::VPC::Id
+</code></pre><p><strong>Resource: Security Group</strong></p>
+<p>And we have finished setting the parameters so that we can reuse CloudFormaton in the next time. Now we will go to define the required components, which are Resources.</p>
+<p>It should be noted that proficient use of the AWS Resource and Property Types Reference documentation plays a very important role in creating a CloudFormation template.</p>
+<p>The first resource we add is a Security Group with a rule that allows traffic on port 80. Here we use the *Intrinsic Function Ref *(Intrinsic Function Ref) technique to return the value of VPCID parameter.</p>
+<p>AWS CloudFormation provides some built-in functionality that helps you manage Stacks and uses built-in functions in templates to assign values ​​to properties that are only available at runtime.</p>
+<p>Copy the following content and then paste it into the code in the New File window in the previous step:</p>
+<pre tabindex="0"><code>Resources:
+  EC2InstanceSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: EC2 Instance Security Group
+      VpcId: !Ref 'VPCID'
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+        CidrIp: !Ref SourceLocation
+</code></pre><p><strong>Resource: Instance Role</strong></p>
+<p>In this step we will create a Role that we can assign to EC2 Instance, allowing it to send monitoring information and communicate with AWS Systems Manager Service (SSM). With that, an InstanceProfile is also created and references the Instance Role.</p>
+<p>The code also uses the Intrinsic Function Sub technique to replace values ​​in a string with Pseudo parameters like AWS::Region and AWS::Partition.</p>
+<p>Dummy parameters are predefined parameters. We will not declare them in the template and use them like a normal parameter.</p>
+<p>Copy the following content and then paste it into the code in the New File window in the previous step:</p>
+<pre tabindex="0"><code>  SSMInstanceRole:
+    Type : AWS::IAM::Role
+    Properties:
+      Policies:
+        - PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Action:
+                  - s3:GetObject
+                Resource:
+                  - !Sub 'arn:aws:s3:::aws-ssm-${AWS::Region}/*'
+                  - !Sub 'arn:aws:s3:::aws-windows-downloads-${AWS::Region}/*'
+                  - !Sub 'arn:aws:s3:::amazon-ssm-${AWS::Region}/*'
+                  - !Sub 'arn:aws:s3:::amazon-ssm-packages-${AWS::Region}/*'
+                  - !Sub 'arn:aws:s3:::${AWS::Region}-birdwatcher-prod/*'
+                  - !Sub 'arn:aws:s3:::patch-baseline-snapshot-${AWS::Region}/*'
+                Effect: Allow
+          PolicyName: ssm-custom-s3-policy
+      Path: /
+      ManagedPolicyArns:
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/AmazonSSMManagedInstanceCore'
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/CloudWatchAgentServerPolicy'
+      AssumeRolePolicyDocument:
+        Version: &quot;2012-10-17&quot;
+        Statement:
+        - Effect: &quot;Allow&quot;
+          Principal:
+            Service:
+            - &quot;ec2.amazonaws.com&quot;
+            - &quot;ssm.amazonaws.com&quot;
+          Action: &quot;sts:AssumeRole&quot;
+  SSMInstanceProfile:
+    Type: &quot;AWS::IAM::InstanceProfile&quot;
+    Properties:
+      Roles:
+      - !Ref SSMInstanceRole
+</code></pre><p><strong>Resource: EC2 Instance</strong></p>
+<p>Continue building the template with the EC2 Instance definition.</p>
+<p>In this step all components including previously configured resources and parameters will be gathered together. We use the Intrinsic Function Reference !Ref technique to assign or create resources and values ​​generated at runtime. Using !Ref also affects the order in which resources are generated by CloudFormation.</p>
+<p>Copy the following content and then paste it into the code in the New File window in the previous step:</p>
+<pre tabindex="0"><code>  EC2Instance:
+    Type: &quot;AWS::EC2::Instance&quot;
+    Properties:
+      ImageId: !Ref LatestAmiId
+      InstanceType: !Ref EC2InstanceType
+      IamInstanceProfile: !Ref SSMIstanceProfile
+      NetworkInterfaces:
+        - DeleteOnTermination: true
+          DeviceIndex: '0'
+          SubnetId: !Ref 'Subnet'
+          GroupSet:
+            - !Ref EC2InstanceSG
+      Tags:
+      - Key: &quot;Name&quot;
+        Value: &quot;MGMT312-EC2&quot;
+</code></pre><p><strong>Outputs</strong></p>
+<p>Finally, the Outputs content with the return result is the Private IP address of the Instance - a property value of the Resource - through the use of the GettAtt Intrinsic Function.</p>
+<p>Refer to the AWS Resource and Property Types Reference documentation to find additional information that can be obtained with the GetAtt or !Ref function. Copy the following content and then paste it into the code in the New File window in the previous step:</p>
+<pre tabindex="0"><code>Outputs:
+  EC2InstancePrivateIP:
+    Value: !GetAtt 'EC2Instance.PrivateIp'
+    Description: Private IP for EC2 Instances
+</code></pre><ul>
+<li>Check the template one last time at the path <strong>/home/ec2-user-environment</strong></li>
+</ul>
+<pre tabindex="0"><code>AWSTemplateFormatVersion: &quot;2010-09-09&quot;
+Description: &quot;Deploy Single EC2 Linux Instance&quot;
+Parameters:
+  EC2InstanceType:
+    AllowedValues:
+      - t3.nano
+      - t3.micro
+      - t3.small
+      - t3.medium
+      - t3.large
+      - t3.xlarge
+      - t3.2xlarge
+      - m5.large
+      - m5.xlarge
+      - m5.2xlarge
+    Default: t3.small
+    Description: Amazon EC2 instance type
+    Type: String
+  LatestAmiId:
+    Type: 'AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;'
+    Default: &quot;/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2&quot;
+  SubnetID:
+    Description: ID of a Subnet.
+    Type: AWS::EC2::Subnet::Id
+  SourceLocation:
+    Description : The CIDR IP address range that can be used to RDP to the EC2 instances
+    Type: String
+    MinLength: 9
+    MaxLength: 18
+    Default: 0.0.0.0/0
+    AllowedPattern: &quot;(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})&quot;
+    ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
+  VPCID:
+    Description: ID of the target VPC (e.g., vpc-0343606e).
+    Type: AWS::EC2::VPC::Id
+
+Resources:
+
+  EC2InstanceSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: EC2 Instance Security Group
+      VpcId: !Ref 'VPCID'
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: !Ref SourceLocation
+
+  SSMInstanceRole:
+    Type : AWS::IAM::Role
+    Properties:
+      Policies:
+        - PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Action:
+                  - s3:GetObject
+                Resource:
+                  - !Sub 'arn:aws:s3:::aws-ssm-${AWS::Region}/*'
+                  - !Sub 'arn:aws:s3:::aws-windows-downloads-${AWS::Region}/*'
+                  - !Sub 'arn:aws:s3:::amazon-ssm-${AWS::Region}/*'
+                  - !Sub 'arn:aws:s3:::amazon-ssm-packages-${AWS::Region}/*'
+                  - !Sub 'arn:aws:s3:::${AWS::Region}-birdwatcher-prod/*'
+                  - !Sub 'arn:aws:s3:::patch-baseline-snapshot-${AWS::Region}/*'
+                Effect: Allow
+          PolicyName: ssm-custom-s3-policy
+      Path: /
+      ManagedPolicyArns:
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/AmazonSSMManagedInstanceCore'
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/CloudWatchAgentServerPolicy'
+      AssumeRolePolicyDocument:
+        Version: &quot;2012-10-17&quot;
+        Statement:
+          - Effect: &quot;Allow&quot;
+            Principal:
+              Service:
+              - &quot;ec2.amazonaws.com&quot;
+              - &quot;ssm.amazonaws.com&quot;
+            Action: &quot;sts:AssumeRole&quot;
+
+  SSMInstanceProfile:
+    Type: &quot;AWS::IAM::InstanceProfile&quot;
+    Properties:
+      Roles:
+        - !Ref SSMInstanceRole
+
+  EC2Instance:
+    Type: &quot;AWS::EC2::Instance&quot;
+    Properties:
+      ImageId: !Ref LatestAmiId
+      InstanceType: !Ref EC2InstanceType
+      IamInstanceProfile: !Ref SSMInstanceProfile
+      NetworkInterfaces:
+        - DeleteOnTermination: true
+          DeviceIndex: '0'
+          SubnetId: !Ref 'Subnet'
+          GroupSet:
+            - !Ref EC2InstanceSG
+      Tags:
+        - Key: &quot;Name&quot;
+          Value: &quot;MGMT312-EC2&quot;
+
+Outputs:
+  EC2InstancePrivateIP:
+    Value: !GetAtt 'EC2Instance.PrivateIp'
+    Description: Private IP for EC2 Instances
+</code></pre><p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/0003-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="4">
+<li>To reduce the burden of error checking of apple template code, we can use some automated testing tools to validate the syntax used in the template. For this CloudFormation workshop, we use <strong>cfn-lint</strong></li>
+</ol>
+<ul>
+<li>Run the following command:</li>
+</ul>
+<pre tabindex="0"><code>cfn-lint singleec2instance.yaml
+</code></pre><ul>
+<li>Easy to see, there was an error with the CloudFormation template, specifically line 97, we used the wrong Subnet value. The cfn-lint tool really did a great job, detecting errors in syntax and information in the template.</li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/0004-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="5">
+<li>Modify the template by changing the Subnet value to SubnetID, and then run the cfn-lint command again.</li>
+</ol>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/0005-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="6">
+<li>The result is that the command runs successfully and there are no errors, other than a warning about python version. We can ignore them because we are simply doing a workshop.</li>
+</ol>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/0006-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="7">
+<li>Create CloudFormation Stack To create CloudFormation Stack, Cloud9 server is required to access and use EC2 and IAM services, so it is necessary to implement additional policy for IAM Role being attached to Cloud9 server. For example, adding necessary policies such as <strong>AmazonEC2FullAccess</strong>, <strong>IAMFullAccess</strong></li>
+</ol>
+<ul>
+<li>Access the page <a href="https://aws.amazon.com/console/">AWS Management Console</a></li>
+<li>Find <strong>IAM</strong></li>
+<li>Select <strong>IAM</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/0007-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="8">
+<li>In the <strong>IAM</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Roles</strong></li>
+<li>Search <strong>CloudFormation-Role</strong></li>
+<li>Select Role name <strong>CloudFormation-Role</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/0008-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="9">
+<li>In the <strong>CloudFormation-Role</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Add permissions</strong></li>
+<li>Select <strong>Attach policies</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/0009-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="10">
+<li>In <strong>Attach policy to CloudFormation-Role</strong> step</li>
+</ol>
+<ul>
+<li>Find <strong>AmazonEC2FullAccess</strong></li>
+<li>Select <strong>AmazonEC2FullAccess</strong></li>
+<li>Select <strong>Attach policies</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00010-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="11">
+<li>Successful <strong>Attach policies</strong> interface</li>
+</ol>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00011-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="12">
+<li>Continue implementing <strong>Attach policies</strong></li>
+</ol>
+<ul>
+<li>Select <strong>Add permissions</strong></li>
+<li>Select <strong>Attach policies</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00012-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="13">
+<li>In <strong>Attach policy to CloudFormation-Role</strong> step</li>
+</ol>
+<ul>
+<li>Find <strong>IAMFullAccess</strong></li>
+<li>Select <strong>IAMFullAccess</strong></li>
+<li>Select <strong>Attach policies</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00013-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="14">
+<li>Interface after <strong>Attach policies</strong> is successful</li>
+</ol>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00014-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="15">
+<li>To prepare to create <strong>CloudFormation Template</strong> we need to prepare <strong>VPC</strong> and <strong>Public subnet</strong></li>
+</ol>
+<ul>
+<li>Access to <a href="https://aws.amazon.com/console/">AWS Management Console</a></li>
+<li>Find <strong>VPC</strong></li>
+<li>Select <strong>VPC</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00015-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="16">
+<li>In the <strong>VPC</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Your VPC</strong></li>
+<li>Select the <strong>VPC</strong> you want to use</li>
+<li>Copy <strong>VPC ID</strong> to use to create <strong>CloudFormation Template</strong></li>
+<li>The same subnet also repeats</li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00016-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="17">
+<li>In the <strong>VPC</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Subnets</strong></li>
+<li>Select the subnet you want to use (Public Subnet)</li>
+<li>Copy <strong>Subnet ID</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00017-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="18">
+<li>After the Cloud9 server has enough permission to create Resources with CloudFormation, on the terminal window, run the command:</li>
+</ol>
+<ul>
+<li>You replace <strong>VPC ID</strong> and <strong>Subnet ID</strong> in the command</li>
+</ul>
+<pre tabindex="0"><code>aws cloudformation create-stack --stack-name asg-cloudformation-stack --template-body file://singleec2instance.yaml --parameters ParameterKey=SubnetID,ParameterValue=&quot;Subnet ID&quot; ParameterKey=VPCID ParameterValue=&quot;VPC ID&quot; - -capabilities CAPABILITY_IAM --region us-east-1
+</code></pre><p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00018-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="19">
+<li>Conduct initialization test <strong>CloudFormation Template</strong></li>
+</ol>
+<ul>
+<li>Go to <a href="https://aws.amazon.com/console/">AWS Management Console</a></li>
+<li>Find <strong>CloudFormation</strong></li>
+<li>Select <strong>CloudFormation</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00019-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="20">
+<li>In the <strong>CloudFormation</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Stack details</strong></li>
+<li>Select Stack named <strong>asg-cloudformation-stack</strong></li>
+<li>Select <strong>Events</strong></li>
+<li>View initialization events</li>
+<li>When <strong>Status</strong> changes to <strong>CREATE_COMPLETE</strong>, the initialization is successful</li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00020-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="21">
+<li>In the <strong>CloudFormation</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Stack details</strong></li>
+<li>Select the stack just created</li>
+<li>Select <strong>Resource</strong></li>
+<li>View information about <strong>Resource</strong> successfully initialized</li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00021-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="22">
+<li>In the <strong>CloudFormation</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Stack details</strong></li>
+<li>Select the stack just created</li>
+<li>Select <strong>Parameters</strong></li>
+<li>View information of <strong>Key-Value</strong> initializers</li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00022-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="23">
+<li>In the <strong>CloudFormation</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Stack details</strong></li>
+<li>Select the stack just created</li>
+<li>Select <strong>Outputs</strong></li>
+<li>Result received 1 EC2Instance</li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00023-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="24">
+<li>To verify <strong>EC2 Instance</strong> is initialized</li>
+</ol>
+<ul>
+<li>Access the page <a href="https://aws.amazon.com/console/">AWS Management Console</a></li>
+<li>Find <strong>EC2</strong></li>
+<li>Select <strong>EC2</strong></li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00024-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+<ol start="25">
+<li>In the <strong>EC2</strong> interface</li>
+</ol>
+<ul>
+<li>Select <strong>Instances</strong></li>
+<li>Select the instance to be initialized</li>
+<li>Select <strong>Details</strong> to see detailed information</li>
+</ul>
+<p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00025-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/3-cloudformationbasic/3.1-createawscloud9/" title="Create Workspace"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/4-cloudformationadvance/" title="Advanced CloudFormation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1651631461"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651631461"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651631461"></script>
+    <script src="/js/jquery.sticky.js?1651631461"></script>
+    <script src="/js/featherlight.min.js?1651631461"></script>
+    <script src="/js/highlight.pack.js?1651631461"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651631461"></script>
+    <script src="/js/learn.js?1651631461"></script>
+    <script src="/js/hugo-learn.js?1651631461"></script>
+
+    <link href="/mermaid/mermaid.css?1651631461" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651631461"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
