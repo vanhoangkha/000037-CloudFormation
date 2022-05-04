@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.97.3" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Ánh xạ và Stacksets :: AWS CloudFormation Workshop</title>
 
     
-    <link href="/css/nucleus.css?1651631462" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651631462" rel="stylesheet">
-    <link href="/css/hybrid.css?1651631462" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651631462" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651631462" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651631462" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651631462" rel="stylesheet">
-    <link href="/css/theme.css?1651631462" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651631462" rel="stylesheet">
+    <link href="/css/nucleus.css?1651633830" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651633830" rel="stylesheet">
+    <link href="/css/hybrid.css?1651633830" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651633830" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651633830" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651633830" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651633830" rel="stylesheet">
+    <link href="/css/theme.css?1651633830" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651633830" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1651631462" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651633830" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1651631462"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651633830"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651631462"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651631462"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651633830"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651633830"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651631462"></script>
+<script type="text/javascript" src="/js/search.js?1651633830"></script>
 
     
   </div>
@@ -610,7 +610,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7864478&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -619,7 +619,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>03-05-2022</font></i>
+        <i><font color=orange>04-05-2022</font></i>
     </left>
     <left>
         <br>
@@ -628,6 +628,7 @@
            
             <i> 
                 <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/anhngo1610/"  style="color:orange">Tuấn Anh </a> 
         </i>
         </left>
 
@@ -688,8 +689,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#ánh-xạ">Ánh xạ</a></li>
-        <li><a href="#stacksets">StackSets</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -717,11 +717,11 @@
 
 
 
-	<h3 id="ánh-xạ">Ánh xạ</h3>
+	<h4 id="ánh-xạ">Ánh xạ</h4>
 <p>Phần ánh xạ trong CloudFormation template có ý nghĩa trong việc gán một key với một tập các giá trị tương ứng.
 Ví dụ: nếu bạn muốn thiết lập các giá trị dựa theo region, bạn có thể tạo ánh xạ giữa region đóng vai trò là key với các giá trị chỉ định nằm trong region mà template được triển khai.
 Điều này có thể đặc biệt hữu ích khi triển khai các gói cài đặt AMI cho global, đó là trường hợp mà ID của các AMI là khác nhau giữa các khu vực.</p>
-<h3 id="stacksets">StackSets</h3>
+<h4 id="stacksets">StackSets</h4>
 <p>AWS CloudFormation StackSets giúp mở rộng chức năng của Stack bằng cách cho phép bạn tạo, cập nhật hoặc xóa Stack nằm trên trên nhiều Account hoặc trên nhiều Region chỉ với một thao tác duy nhất.</p>
 <p>Sử dụng User có quyền quản trị, bạn có thể định nghĩa và quản lý một AWS CloudFormation template, đồng thời sử dụng template này làm cơ sở để triển khai Stack lên các Account và Region mà ta mong muốn.</p>
 <p>Ví dụ: bạn có thể dễ dàng thiết lập chính sách AWS CloudTrail hoặc AWS Config trên nhiều Account chỉ bằng một thao tác với StackSet. Bạn cũng có thể sử dụng StackSets để triển khai tài nguyên cho một Account nhưng nằm trên nhiều Region.</p>
@@ -756,21 +756,21 @@ Ví dụ: nếu bạn muốn thiết lập các giá trị dựa theo region, b�
 <li>Tạo một file <strong>mapping_stackset_iam.yaml</strong></li>
 <li>Sau đó sao chép và dán nội dụng mã này vào file đồng thời lưu lại:</li>
 </ul>
-<pre tabindex="0"><code>AWSTemplateFormatVersion: '2010-09-09'
+<pre tabindex="0"><code>AWSTemplateFormatVersion: &#39;2010-09-09&#39;
 Description: This CloudFormation StackSet deploys two AWS provided CloudFormation templates that add Administrator and Execution Roles required to use AWSCloudFormationStackSetAdministrationRole
 Resources:
   AWSCloudFormationStackSetAdministrationRole:
     Type: AWS::CloudFormation::Stack
     Properties:
       TemplateURL: https://s3.amazonaws.com/cloudformation-stackset-sample-templates-us-east-1/AWSCloudFormationStackSetAdministrationRole.yml 
-      TimeoutInMinutes: '3'
+      TimeoutInMinutes: &#39;3&#39;
   AWSCloudFormationStackSetExecutionRole:
     Type: AWS::CloudFormation::Stack
     Properties:
       TemplateURL: https://s3.amazonaws.com/cloudformation-stackset-sample-templates-us-east-1/AWSCloudFormationStackSetExecutionRole.yml 
-      TimeoutInMinutes: '3'
+      TimeoutInMinutes: &#39;3&#39;
       Parameters:
-        AdministratorAccountId : !Ref 'AccountID'
+        AdministratorAccountId : !Ref &#39;AccountID&#39;
 Parameters:
   AccountID:
       Type: String
@@ -1247,19 +1247,19 @@ Parameters:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651631462"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651631462"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651631462"></script>
-    <script src="/js/jquery.sticky.js?1651631462"></script>
-    <script src="/js/featherlight.min.js?1651631462"></script>
-    <script src="/js/highlight.pack.js?1651631462"></script>
+    <script src="/js/clipboard.min.js?1651633830"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651633830"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651633830"></script>
+    <script src="/js/jquery.sticky.js?1651633830"></script>
+    <script src="/js/featherlight.min.js?1651633830"></script>
+    <script src="/js/highlight.pack.js?1651633830"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651631462"></script>
-    <script src="/js/learn.js?1651631462"></script>
-    <script src="/js/hugo-learn.js?1651631462"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651633830"></script>
+    <script src="/js/learn.js?1651633830"></script>
+    <script src="/js/hugo-learn.js?1651633830"></script>
 
-    <link href="/mermaid/mermaid.css?1651631462" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1651631462"></script>
+    <link href="/mermaid/mermaid.css?1651633830" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651633830"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

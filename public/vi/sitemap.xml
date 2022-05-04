@@ -74,6 +74,18 @@
                 href="/vi/3-cloudformationbasic/3.1-createawscloud9/"
                 />
   </url><url>
+    <loc>/vi/4-cloudformationadvance/4.2-stackset/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/4-cloudformationadvance/4.2-stackset/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/4-cloudformationadvance/4.2-stackset/"
+                />
+  </url><url>
     <loc>/vi/2-prerequiste/</loc>
     <xhtml:link
                 rel="alternate"
@@ -120,18 +132,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="/vi/4-cloudformationadvance/4.1-customresource/4.1.2-createstack/"
-                />
-  </url><url>
-    <loc>/vi/4-cloudformationadvance/4.2-stackset/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/4-cloudformationadvance/4.2-stackset/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/4-cloudformationadvance/4.2-stackset/"
                 />
   </url><url>
     <loc>/vi/3-cloudformationbasic/</loc>

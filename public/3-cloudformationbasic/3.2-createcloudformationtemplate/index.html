@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.97.3" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Create CloudFormation Template :: AWS CloudFormation Workshop</title>
 
     
-    <link href="/css/nucleus.css?1651631461" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651631461" rel="stylesheet">
-    <link href="/css/hybrid.css?1651631461" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651631461" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651631461" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651631461" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651631461" rel="stylesheet">
-    <link href="/css/theme.css?1651631461" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651631461" rel="stylesheet">
+    <link href="/css/nucleus.css?1651633830" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651633830" rel="stylesheet">
+    <link href="/css/hybrid.css?1651633830" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651633830" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651633830" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651633830" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651633830" rel="stylesheet">
+    <link href="/css/theme.css?1651633830" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651633830" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1651631461" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651633830" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1651631461"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651633830"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651631461"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651631461"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651633830"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651633830"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651631461"></script>
+<script type="text/javascript" src="/js/search.js?1651633830"></script>
 
     
   </div>
@@ -610,7 +610,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7864478&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -619,7 +619,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>03-05-2022</font></i>
+        <i><font color=orange>04-05-2022</font></i>
     </left>
     <left>
         <br>
@@ -628,6 +628,7 @@
            
             <i> 
                 <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/anhngo1610/"  style="color:orange">Tuấn Anh </a> 
         </i>
         </left>
 
@@ -684,7 +685,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -708,7 +717,8 @@
 
 
 
-	<p>One of the keys to working effectively with CloudFormation is knowing how to use the resource reference table on the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS Resource and Property Types Reference</a>. Here you can find a list of information and definitions of resources and properties.</p>
+	<h4 id="create-cloudformation-template">Create CloudFormation Template</h4>
+<p>One of the keys to working effectively with CloudFormation is knowing how to use the resource reference table on the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS Resource and Property Types Reference</a>. Here you can find a list of information and definitions of resources and properties.</p>
 <ol>
 <li>In the environment view of <strong>AWS Cloud9</strong></li>
 </ol>
@@ -744,8 +754,8 @@
 <ol start="3">
 <li>Paste the content below into the New File window</li>
 </ol>
-<pre tabindex="0"><code>AWSTemplateFormatVersion: &quot;2010-09-09&quot;
-Description: &quot;Deploy Single EC2 Linux Instance as part of MGT312 Workshop&quot;
+<pre tabindex="0"><code>AWSTemplateFormatVersion: &#34;2010-09-09&#34;
+Description: &#34;Deploy Single EC2 Linux Instance as part of MGT312 Workshop&#34;
 Parameters:
   EC2InstanceType:
     AllowedValues:
@@ -763,8 +773,8 @@ Parameters:
     Description: Amazon EC2 instance type
     Type: String
   LatestAmiId:
-    Type: 'AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;'
-    Default: &quot;/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2&quot;
+    Type: &#39;AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;&#39;
+    Default: &#34;/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2&#34;
   SubnetID:
     Description: ID of a Subnet.
     Type: AWS::EC2::Subnet::Id
@@ -774,7 +784,7 @@ Parameters:
     MinLength: 9
     MaxLength: 18
     Default: 0.0.0.0/0
-    AllowedPattern: &quot;(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3 })/(\\d{1,2})&quot;
+    AllowedPattern: &#34;(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3 })/(\\d{1,2})&#34;
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
   VPCID:
     Description: ID of the target VPC (e.g., vpc-0343606e).
@@ -790,7 +800,7 @@ Parameters:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: EC2 Instance Security Group
-      VpcId: !Ref 'VPCID'
+      VpcId: !Ref &#39;VPCID&#39;
       SecurityGroupIngress:
       - IpProtocol: tcp
         FromPort: 80
@@ -806,34 +816,34 @@ Parameters:
     Properties:
       Policies:
         - PolicyDocument:
-            Version: '2012-10-17'
+            Version: &#39;2012-10-17&#39;
             Statement:
               - Action:
                   - s3:GetObject
                 Resource:
-                  - !Sub 'arn:aws:s3:::aws-ssm-${AWS::Region}/*'
-                  - !Sub 'arn:aws:s3:::aws-windows-downloads-${AWS::Region}/*'
-                  - !Sub 'arn:aws:s3:::amazon-ssm-${AWS::Region}/*'
-                  - !Sub 'arn:aws:s3:::amazon-ssm-packages-${AWS::Region}/*'
-                  - !Sub 'arn:aws:s3:::${AWS::Region}-birdwatcher-prod/*'
-                  - !Sub 'arn:aws:s3:::patch-baseline-snapshot-${AWS::Region}/*'
+                  - !Sub &#39;arn:aws:s3:::aws-ssm-${AWS::Region}/*&#39;
+                  - !Sub &#39;arn:aws:s3:::aws-windows-downloads-${AWS::Region}/*&#39;
+                  - !Sub &#39;arn:aws:s3:::amazon-ssm-${AWS::Region}/*&#39;
+                  - !Sub &#39;arn:aws:s3:::amazon-ssm-packages-${AWS::Region}/*&#39;
+                  - !Sub &#39;arn:aws:s3:::${AWS::Region}-birdwatcher-prod/*&#39;
+                  - !Sub &#39;arn:aws:s3:::patch-baseline-snapshot-${AWS::Region}/*&#39;
                 Effect: Allow
           PolicyName: ssm-custom-s3-policy
       Path: /
       ManagedPolicyArns:
-        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/AmazonSSMManagedInstanceCore'
-        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/CloudWatchAgentServerPolicy'
+        - !Sub &#39;arn:${AWS::Partition}:iam::aws:policy/AmazonSSMManagedInstanceCore&#39;
+        - !Sub &#39;arn:${AWS::Partition}:iam::aws:policy/CloudWatchAgentServerPolicy&#39;
       AssumeRolePolicyDocument:
-        Version: &quot;2012-10-17&quot;
+        Version: &#34;2012-10-17&#34;
         Statement:
-        - Effect: &quot;Allow&quot;
+        - Effect: &#34;Allow&#34;
           Principal:
             Service:
-            - &quot;ec2.amazonaws.com&quot;
-            - &quot;ssm.amazonaws.com&quot;
-          Action: &quot;sts:AssumeRole&quot;
+            - &#34;ec2.amazonaws.com&#34;
+            - &#34;ssm.amazonaws.com&#34;
+          Action: &#34;sts:AssumeRole&#34;
   SSMInstanceProfile:
-    Type: &quot;AWS::IAM::InstanceProfile&quot;
+    Type: &#34;AWS::IAM::InstanceProfile&#34;
     Properties:
       Roles:
       - !Ref SSMInstanceRole
@@ -842,32 +852,32 @@ Parameters:
 <p>In this step all components including previously configured resources and parameters will be gathered together. We use the Intrinsic Function Reference !Ref technique to assign or create resources and values ​​generated at runtime. Using !Ref also affects the order in which resources are generated by CloudFormation.</p>
 <p>Copy the following content and then paste it into the code in the New File window in the previous step:</p>
 <pre tabindex="0"><code>  EC2Instance:
-    Type: &quot;AWS::EC2::Instance&quot;
+    Type: &#34;AWS::EC2::Instance&#34;
     Properties:
       ImageId: !Ref LatestAmiId
       InstanceType: !Ref EC2InstanceType
       IamInstanceProfile: !Ref SSMIstanceProfile
       NetworkInterfaces:
         - DeleteOnTermination: true
-          DeviceIndex: '0'
-          SubnetId: !Ref 'Subnet'
+          DeviceIndex: &#39;0&#39;
+          SubnetId: !Ref &#39;Subnet&#39;
           GroupSet:
             - !Ref EC2InstanceSG
       Tags:
-      - Key: &quot;Name&quot;
-        Value: &quot;MGMT312-EC2&quot;
+      - Key: &#34;Name&#34;
+        Value: &#34;MGMT312-EC2&#34;
 </code></pre><p><strong>Outputs</strong></p>
 <p>Finally, the Outputs content with the return result is the Private IP address of the Instance - a property value of the Resource - through the use of the GettAtt Intrinsic Function.</p>
 <p>Refer to the AWS Resource and Property Types Reference documentation to find additional information that can be obtained with the GetAtt or !Ref function. Copy the following content and then paste it into the code in the New File window in the previous step:</p>
 <pre tabindex="0"><code>Outputs:
   EC2InstancePrivateIP:
-    Value: !GetAtt 'EC2Instance.PrivateIp'
+    Value: !GetAtt &#39;EC2Instance.PrivateIp&#39;
     Description: Private IP for EC2 Instances
 </code></pre><ul>
 <li>Check the template one last time at the path <strong>/home/ec2-user-environment</strong></li>
 </ul>
-<pre tabindex="0"><code>AWSTemplateFormatVersion: &quot;2010-09-09&quot;
-Description: &quot;Deploy Single EC2 Linux Instance&quot;
+<pre tabindex="0"><code>AWSTemplateFormatVersion: &#34;2010-09-09&#34;
+Description: &#34;Deploy Single EC2 Linux Instance&#34;
 Parameters:
   EC2InstanceType:
     AllowedValues:
@@ -885,8 +895,8 @@ Parameters:
     Description: Amazon EC2 instance type
     Type: String
   LatestAmiId:
-    Type: 'AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;'
-    Default: &quot;/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2&quot;
+    Type: &#39;AWS::SSM::Parameter::Value&lt;AWS::EC2::Image::Id&gt;&#39;
+    Default: &#34;/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2&#34;
   SubnetID:
     Description: ID of a Subnet.
     Type: AWS::EC2::Subnet::Id
@@ -896,7 +906,7 @@ Parameters:
     MinLength: 9
     MaxLength: 18
     Default: 0.0.0.0/0
-    AllowedPattern: &quot;(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})&quot;
+    AllowedPattern: &#34;(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})&#34;
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
   VPCID:
     Description: ID of the target VPC (e.g., vpc-0343606e).
@@ -908,7 +918,7 @@ Resources:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: EC2 Instance Security Group
-      VpcId: !Ref 'VPCID'
+      VpcId: !Ref &#39;VPCID&#39;
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
@@ -920,58 +930,58 @@ Resources:
     Properties:
       Policies:
         - PolicyDocument:
-            Version: '2012-10-17'
+            Version: &#39;2012-10-17&#39;
             Statement:
               - Action:
                   - s3:GetObject
                 Resource:
-                  - !Sub 'arn:aws:s3:::aws-ssm-${AWS::Region}/*'
-                  - !Sub 'arn:aws:s3:::aws-windows-downloads-${AWS::Region}/*'
-                  - !Sub 'arn:aws:s3:::amazon-ssm-${AWS::Region}/*'
-                  - !Sub 'arn:aws:s3:::amazon-ssm-packages-${AWS::Region}/*'
-                  - !Sub 'arn:aws:s3:::${AWS::Region}-birdwatcher-prod/*'
-                  - !Sub 'arn:aws:s3:::patch-baseline-snapshot-${AWS::Region}/*'
+                  - !Sub &#39;arn:aws:s3:::aws-ssm-${AWS::Region}/*&#39;
+                  - !Sub &#39;arn:aws:s3:::aws-windows-downloads-${AWS::Region}/*&#39;
+                  - !Sub &#39;arn:aws:s3:::amazon-ssm-${AWS::Region}/*&#39;
+                  - !Sub &#39;arn:aws:s3:::amazon-ssm-packages-${AWS::Region}/*&#39;
+                  - !Sub &#39;arn:aws:s3:::${AWS::Region}-birdwatcher-prod/*&#39;
+                  - !Sub &#39;arn:aws:s3:::patch-baseline-snapshot-${AWS::Region}/*&#39;
                 Effect: Allow
           PolicyName: ssm-custom-s3-policy
       Path: /
       ManagedPolicyArns:
-        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/AmazonSSMManagedInstanceCore'
-        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/CloudWatchAgentServerPolicy'
+        - !Sub &#39;arn:${AWS::Partition}:iam::aws:policy/AmazonSSMManagedInstanceCore&#39;
+        - !Sub &#39;arn:${AWS::Partition}:iam::aws:policy/CloudWatchAgentServerPolicy&#39;
       AssumeRolePolicyDocument:
-        Version: &quot;2012-10-17&quot;
+        Version: &#34;2012-10-17&#34;
         Statement:
-          - Effect: &quot;Allow&quot;
+          - Effect: &#34;Allow&#34;
             Principal:
               Service:
-              - &quot;ec2.amazonaws.com&quot;
-              - &quot;ssm.amazonaws.com&quot;
-            Action: &quot;sts:AssumeRole&quot;
+              - &#34;ec2.amazonaws.com&#34;
+              - &#34;ssm.amazonaws.com&#34;
+            Action: &#34;sts:AssumeRole&#34;
 
   SSMInstanceProfile:
-    Type: &quot;AWS::IAM::InstanceProfile&quot;
+    Type: &#34;AWS::IAM::InstanceProfile&#34;
     Properties:
       Roles:
         - !Ref SSMInstanceRole
 
   EC2Instance:
-    Type: &quot;AWS::EC2::Instance&quot;
+    Type: &#34;AWS::EC2::Instance&#34;
     Properties:
       ImageId: !Ref LatestAmiId
       InstanceType: !Ref EC2InstanceType
       IamInstanceProfile: !Ref SSMInstanceProfile
       NetworkInterfaces:
         - DeleteOnTermination: true
-          DeviceIndex: '0'
-          SubnetId: !Ref 'Subnet'
+          DeviceIndex: &#39;0&#39;
+          SubnetId: !Ref &#39;Subnet&#39;
           GroupSet:
             - !Ref EC2InstanceSG
       Tags:
-        - Key: &quot;Name&quot;
-          Value: &quot;MGMT312-EC2&quot;
+        - Key: &#34;Name&#34;
+          Value: &#34;MGMT312-EC2&#34;
 
 Outputs:
   EC2InstancePrivateIP:
-    Value: !GetAtt 'EC2Instance.PrivateIp'
+    Value: !GetAtt &#39;EC2Instance.PrivateIp&#39;
     Description: Private IP for EC2 Instances
 </code></pre><p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/0003-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
 <ol start="4">
@@ -1087,7 +1097,7 @@ Outputs:
 <ul>
 <li>You replace <strong>VPC ID</strong> and <strong>Subnet ID</strong> in the command</li>
 </ul>
-<pre tabindex="0"><code>aws cloudformation create-stack --stack-name asg-cloudformation-stack --template-body file://singleec2instance.yaml --parameters ParameterKey=SubnetID,ParameterValue=&quot;Subnet ID&quot; ParameterKey=VPCID ParameterValue=&quot;VPC ID&quot; - -capabilities CAPABILITY_IAM --region us-east-1
+<pre tabindex="0"><code>aws cloudformation create-stack --stack-name asg-cloudformation-stack --template-body file://singleec2instance.yaml --parameters ParameterKey=SubnetID,ParameterValue=&#34;Subnet ID&#34; ParameterKey=VPCID ParameterValue=&#34;VPC ID&#34; - -capabilities CAPABILITY_IAM --region us-east-1
 </code></pre><p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00018-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
 <ol start="19">
 <li>Conduct initialization test <strong>CloudFormation Template</strong></li>
@@ -1473,19 +1483,19 @@ Outputs:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651631461"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651631461"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651631461"></script>
-    <script src="/js/jquery.sticky.js?1651631461"></script>
-    <script src="/js/featherlight.min.js?1651631461"></script>
-    <script src="/js/highlight.pack.js?1651631461"></script>
+    <script src="/js/clipboard.min.js?1651633830"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651633830"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651633830"></script>
+    <script src="/js/jquery.sticky.js?1651633830"></script>
+    <script src="/js/featherlight.min.js?1651633830"></script>
+    <script src="/js/highlight.pack.js?1651633830"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651631461"></script>
-    <script src="/js/learn.js?1651631461"></script>
-    <script src="/js/hugo-learn.js?1651631461"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651633830"></script>
+    <script src="/js/learn.js?1651633830"></script>
+    <script src="/js/hugo-learn.js?1651633830"></script>
 
-    <link href="/mermaid/mermaid.css?1651631461" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1651631461"></script>
+    <link href="/mermaid/mermaid.css?1651633830" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651633830"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

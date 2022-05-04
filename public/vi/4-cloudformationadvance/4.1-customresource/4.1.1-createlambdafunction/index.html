@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.97.3" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Tạo Lambda Function :: AWS CloudFormation Workshop</title>
 
     
-    <link href="/css/nucleus.css?1651631462" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651631462" rel="stylesheet">
-    <link href="/css/hybrid.css?1651631462" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651631462" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651631462" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651631462" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651631462" rel="stylesheet">
-    <link href="/css/theme.css?1651631462" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651631462" rel="stylesheet">
+    <link href="/css/nucleus.css?1651633830" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651633830" rel="stylesheet">
+    <link href="/css/hybrid.css?1651633830" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651633830" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651633830" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651633830" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651633830" rel="stylesheet">
+    <link href="/css/theme.css?1651633830" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651633830" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1651631462" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1651633830" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1651631462"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651633830"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651631462"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651631462"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651633830"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651633830"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651631462"></script>
+<script type="text/javascript" src="/js/search.js?1651633830"></script>
 
     
   </div>
@@ -610,7 +610,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7864478&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -619,7 +619,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>03-05-2022</font></i>
+        <i><font color=orange>04-05-2022</font></i>
     </left>
     <left>
         <br>
@@ -628,6 +628,7 @@
            
             <i> 
                 <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/anhngo1610/"  style="color:orange">Tuấn Anh </a> 
         </i>
         </left>
 
@@ -690,7 +691,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -714,7 +723,8 @@
 
 
 
-	<ol>
+	<h4 id="tạo-lambda-function">Tạo Lambda Function</h4>
+<ol>
 <li>Truy cập vào giao diện <a href="https://aws.amazon.com/console/">AWS Management Console</a></li>
 </ol>
 <ul>
@@ -755,33 +765,33 @@
 <li>Sao chép và dán vào đoạn mã sau:</li>
 </ul>
 <pre tabindex="0"><code>{
-    &quot;Version&quot;: &quot;2012-10-17&quot;,
-    &quot;Statement&quot;: [
+    &#34;Version&#34;: &#34;2012-10-17&#34;,
+    &#34;Statement&#34;: [
         {
-            &quot;Effect&quot;: &quot;Allow&quot;,
-            &quot;Action&quot;: [
-                &quot;logs:CreateLogGroup&quot;,
-                &quot;logs:CreateLogStream&quot;,
-                &quot;logs:PutLogEvents&quot;
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Action&#34;: [
+                &#34;logs:CreateLogGroup&#34;,
+                &#34;logs:CreateLogStream&#34;,
+                &#34;logs:PutLogEvents&#34;
             ],
-            &quot;Resource&quot;: &quot;arn:aws:logs:*:*:*&quot;
+            &#34;Resource&#34;: &#34;arn:aws:logs:*:*:*&#34;
         },
         {
-            &quot;Effect&quot;: &quot;Allow&quot;,
-            &quot;Action&quot;: [
-                &quot;ec2:CreateKeyPair&quot;,
-                &quot;ec2:DescribeKeyPairs&quot;,
-                &quot;ssm:PutParameter&quot;
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Action&#34;: [
+                &#34;ec2:CreateKeyPair&#34;,
+                &#34;ec2:DescribeKeyPairs&#34;,
+                &#34;ssm:PutParameter&#34;
             ],
-            &quot;Resource&quot;: &quot;*&quot;
+            &#34;Resource&#34;: &#34;*&#34;
         },
         {
-            &quot;Effect&quot;: &quot;Allow&quot;,
-            &quot;Action&quot;: [
-                &quot;ec2:DeleteKeyPair&quot;,
-                &quot;ssm:DeleteParameter&quot;
+            &#34;Effect&#34;: &#34;Allow&#34;,
+            &#34;Action&#34;: [
+                &#34;ec2:DeleteKeyPair&#34;,
+                &#34;ssm:DeleteParameter&#34;
             ],
-            &quot;Resource&quot;: &quot;*&quot;
+            &#34;Resource&#34;: &#34;*&#34;
         }
     ]
 }
@@ -866,7 +876,7 @@
 <ol start="17">
 <li>Trong nội dung chỉnh sửa Function code, nhập vào nội dung mã lệnh như sau:</li>
 </ol>
-<pre tabindex="0"><code>&quot;&quot;&quot;
+<pre tabindex="0"><code>&#34;&#34;&#34;
 This lambda implements the custom resource handler for creating an SSH key
 and storing in in SSM parameter store.
 
@@ -874,14 +884,14 @@ e.g.
 
 SSHKeyCR:
     Type: Custom::CreateSSHKey
-    Version: &quot;1.0&quot;
+    Version: &#34;1.0&#34;
     Properties:
       ServiceToken: !Ref FunctionArn
       KeyName: MyKey
 
 An SSH key called MyKey will be created.
 
-&quot;&quot;&quot;
+&#34;&#34;&#34;
 
 from json import dumps
 import sys
@@ -892,7 +902,7 @@ import boto3
 
 
 def log_exception():
-    &quot;Log a stack trace&quot;
+    &#34;Log a stack trace&#34;
     exc_type, exc_value, exc_traceback = sys.exc_info()
     print(repr(traceback.format_exception(
         exc_type,
@@ -901,43 +911,43 @@ def log_exception():
 
 
 def send_response(event, context, response):
-    &quot;Send a response to CloudFormation to handle the custom resource lifecycle&quot;
+    &#34;Send a response to CloudFormation to handle the custom resource lifecycle&#34;
 
     responseBody = { 
-        'Status': response,
-        'Reason': 'See details in CloudWatch Log Stream: ' + \
+        &#39;Status&#39;: response,
+        &#39;Reason&#39;: &#39;See details in CloudWatch Log Stream: &#39; + \
             context.log_stream_name,
-        'PhysicalResourceId': context.log_stream_name,
-        'StackId': event['StackId'],
-        'RequestId': event['RequestId'],
-        'LogicalResourceId': event['LogicalResourceId'],
+        &#39;PhysicalResourceId&#39;: context.log_stream_name,
+        &#39;StackId&#39;: event[&#39;StackId&#39;],
+        &#39;RequestId&#39;: event[&#39;RequestId&#39;],
+        &#39;LogicalResourceId&#39;: event[&#39;LogicalResourceId&#39;],
     }
 
-    print('RESPONSE BODY: \n' + dumps(responseBody))
+    print(&#39;RESPONSE BODY: \n&#39; + dumps(responseBody))
 
-    data = dumps(responseBody).encode('utf-8')
+    data = dumps(responseBody).encode(&#39;utf-8&#39;)
     
     req = urllib.request.Request(
-        event['ResponseURL'], 
+        event[&#39;ResponseURL&#39;], 
         data,
-        headers={'Content-Length': len(data), 'Content-Type': ''})
-    req.get_method = lambda: 'PUT'
+        headers={&#39;Content-Length&#39;: len(data), &#39;Content-Type&#39;: &#39;&#39;})
+    req.get_method = lambda: &#39;PUT&#39;
 
     try:
         with urllib.request.urlopen(req) as response:
-            print(f'response.status: {response.status}, ' + 
-                  f'response.reason: {response.reason}')
-            print('response from cfn: ' + response.read().decode('utf-8'))
+            print(f&#39;response.status: {response.status}, &#39; + 
+                  f&#39;response.reason: {response.reason}&#39;)
+            print(&#39;response from cfn: &#39; + response.read().decode(&#39;utf-8&#39;))
     except urllib.error.URLError:
         log_exception()
-        raise Exception('Received non-200 response while sending ' +\
-            'response to AWS CloudFormation')
+        raise Exception(&#39;Received non-200 response while sending &#39; +\
+            &#39;response to AWS CloudFormation&#39;)
 
     return True
 
 
 def custom_resource_handler(event, context):
-    '''
+    &#39;&#39;&#39;
     This function creates a PEM key, commits it as a key pair in EC2, 
     and stores it, encrypted, in SSM.
 
@@ -955,77 +965,77 @@ def custom_resource_handler(event, context):
     To use it, change the permissions to 600
     Ensure to bundle the necessary packages into the zip stored in S3
 
-    '''
-    print(&quot;Event JSON: \n&quot; + dumps(event))
+    &#39;&#39;&#39;
+    print(&#34;Event JSON: \n&#34; + dumps(event))
 
     # session = boto3.session.Session()
     # region = session.region_name
 
     # Original
-    # pem_key_name = os.environ['KEY_NAME']
+    # pem_key_name = os.environ[&#39;KEY_NAME&#39;]
     
-    pem_key_name = event['ResourceProperties']['KeyName']
+    pem_key_name = event[&#39;ResourceProperties&#39;][&#39;KeyName&#39;]
 
-    response = 'FAILED'
+    response = &#39;FAILED&#39;
     
-    ec2 = boto3.client('ec2')
+    ec2 = boto3.client(&#39;ec2&#39;)
 
-    if event['RequestType'] == 'Create':
+    if event[&#39;RequestType&#39;] == &#39;Create&#39;:
         try:
-            print(&quot;Creating key name %s&quot; % str(pem_key_name))
+            print(&#34;Creating key name %s&#34; % str(pem_key_name))
 
             key = ec2.create_key_pair(KeyName=pem_key_name)
-            key_material = key['KeyMaterial']
-            ssm_client = boto3.client('ssm')
+            key_material = key[&#39;KeyMaterial&#39;]
+            ssm_client = boto3.client(&#39;ssm&#39;)
             param = ssm_client.put_parameter(
                 Name=pem_key_name, 
                 Value=key_material, 
-                Type='SecureString')
+                Type=&#39;SecureString&#39;)
 
             print(param)
-            print(f'The parameter {pem_key_name} has been created.')
+            print(f&#39;The parameter {pem_key_name} has been created.&#39;)
 
-            response = 'SUCCESS'
+            response = &#39;SUCCESS&#39;
 
         except Exception as e:
-            print(f'There was an error {e} creating and committing ' +\
-                f'key {pem_key_name} to the parameter store')
+            print(f&#39;There was an error {e} creating and committing &#39; +\
+                f&#39;key {pem_key_name} to the parameter store&#39;)
             log_exception()
-            response = 'FAILED'
+            response = &#39;FAILED&#39;
 
         send_response(event, context, response)
 
         return
 
-    if event['RequestType'] == 'Update':
+    if event[&#39;RequestType&#39;] == &#39;Update&#39;:
         # Do nothing and send a success immediately
         send_response(event, context, response)
         return
 
-    if event['RequestType'] == 'Delete':
+    if event[&#39;RequestType&#39;] == &#39;Delete&#39;:
         #Delete the entry in SSM Parameter store and EC2
         try:
-            print(f&quot;Deleting key name {pem_key_name}&quot;)
+            print(f&#34;Deleting key name {pem_key_name}&#34;)
 
-            ssm_client = boto3.client('ssm')
+            ssm_client = boto3.client(&#39;ssm&#39;)
             rm_param = ssm_client.delete_parameter(Name=pem_key_name)
 
             print(rm_param)
 
             _ = ec2.delete_key_pair(KeyName=pem_key_name)
 
-            response = 'SUCCESS'
+            response = &#39;SUCCESS&#39;
         except Exception as e:
-            print(f&quot;There was an error {e} deleting the key {pem_key_name} ' +\
-            from SSM Parameter store or EC2&quot;)
+            print(f&#34;There was an error {e} deleting the key {pem_key_name} &#39; +\
+            from SSM Parameter store or EC2&#34;)
             log_exception()
-            response = 'FAILED'
+            response = &#39;FAILED&#39;
          
         send_response(event, context, response)
 
 
 def lambda_handler(event, context):
-    &quot;Lambda handler for the custom resource&quot;
+    &#34;Lambda handler for the custom resource&#34;
 
     try:
         return custom_resource_handler(event, context)
@@ -1041,7 +1051,7 @@ def lambda_handler(event, context):
 </li>
 </ul>
 <pre tabindex="0"><code>def lambda_handler(event, context):
-    &quot;Lambda handler for the custom resource&quot;
+    &#34;Lambda handler for the custom resource&#34;
 
     try:
         return custom_resource_handler(event, context)
@@ -1051,28 +1061,28 @@ def lambda_handler(event, context):
 </code></pre><ul>
 <li><strong>Thứ hai: hàm custom_resource_handler</strong> - là hàm chứa nội dung xử lý chi tiết khi có sự sự kiện xảy ra. Cụ thể, hàm sẽ thực hiện xác định loại yêu cầu và gửi trả phản hồi lại cho CloudFormation.</li>
 </ul>
-<pre tabindex="0"><code>if event['RequestType'] == 'Create':
+<pre tabindex="0"><code>if event[&#39;RequestType&#39;] == &#39;Create&#39;:
    try:
-       print(&quot;Creating key name %s&quot; % str(pem_key_name))
+       print(&#34;Creating key name %s&#34; % str(pem_key_name))
 
        key = ec2.create_key_pair(KeyName=pem_key_name)
-       key_material = key['KeyMaterial']
-       ssm_client = boto3.client('ssm')
+       key_material = key[&#39;KeyMaterial&#39;]
+       ssm_client = boto3.client(&#39;ssm&#39;)
        param = ssm_client.put_parameter(
            Name=pem_key_name, 
            Value=key_material, 
-           Type='SecureString')
+           Type=&#39;SecureString&#39;)
 
        print(param)
-       print(f'The parameter {pem_key_name} has been created.')
+       print(f&#39;The parameter {pem_key_name} has been created.&#39;)
 
-       response = 'SUCCESS'
+       response = &#39;SUCCESS&#39;
 
    except Exception as e:
-       print(f'There was an error {e} creating and committing ' +\
-           f'key {pem_key_name} to the parameter store')
+       print(f&#39;There was an error {e} creating and committing &#39; +\
+           f&#39;key {pem_key_name} to the parameter store&#39;)
        log_exception()
-       response = 'FAILED'
+       response = &#39;FAILED&#39;
 
    send_response(event, context, response)
 
@@ -1081,37 +1091,37 @@ def lambda_handler(event, context):
 <li><strong>Thứ ba: hàm send_response</strong> - là hàm gửi tra kết quả phản hồi cho CloudFormation endpoint dựa trên phương thức HTTP PUTS.</li>
 </ul>
 <pre tabindex="0"><code>def send_response(event, context, response):
-    &quot;Send a response to CloudFormation to handle the custom resource lifecycle&quot;
+    &#34;Send a response to CloudFormation to handle the custom resource lifecycle&#34;
 
     responseBody = { 
-        'Status': response,
-        'Reason': 'See details in CloudWatch Log Stream: ' + \
+        &#39;Status&#39;: response,
+        &#39;Reason&#39;: &#39;See details in CloudWatch Log Stream: &#39; + \
             context.log_stream_name,
-        'PhysicalResourceId': context.log_stream_name,
-        'StackId': event['StackId'],
-        'RequestId': event['RequestId'],
-        'LogicalResourceId': event['LogicalResourceId'],
+        &#39;PhysicalResourceId&#39;: context.log_stream_name,
+        &#39;StackId&#39;: event[&#39;StackId&#39;],
+        &#39;RequestId&#39;: event[&#39;RequestId&#39;],
+        &#39;LogicalResourceId&#39;: event[&#39;LogicalResourceId&#39;],
     }
 
-    print('RESPONSE BODY: \n' + dumps(responseBody))
+    print(&#39;RESPONSE BODY: \n&#39; + dumps(responseBody))
 
-    data = dumps(responseBody).encode('utf-8')
+    data = dumps(responseBody).encode(&#39;utf-8&#39;)
     
     req = urllib.request.Request(
-        event['ResponseURL'], 
+        event[&#39;ResponseURL&#39;], 
         data,
-        headers={'Content-Length': len(data), 'Content-Type': ''})
-    req.get_method = lambda: 'PUT'
+        headers={&#39;Content-Length&#39;: len(data), &#39;Content-Type&#39;: &#39;&#39;})
+    req.get_method = lambda: &#39;PUT&#39;
 
     try:
         with urllib.request.urlopen(req) as response:
-            print(f'response.status: {response.status}, ' + 
-                  f'response.reason: {response.reason}')
-            print('response from cfn: ' + response.read().decode('utf-8'))
+            print(f&#39;response.status: {response.status}, &#39; + 
+                  f&#39;response.reason: {response.reason}&#39;)
+            print(&#39;response from cfn: &#39; + response.read().decode(&#39;utf-8&#39;))
     except urllib.error.URLError:
         log_exception()
-        raise Exception('Received non-200 response while sending ' +\
-            'response to AWS CloudFormation')
+        raise Exception(&#39;Received non-200 response while sending &#39; +\
+            &#39;response to AWS CloudFormation&#39;)
 
     return True
 </code></pre><ul>
@@ -1436,19 +1446,19 @@ def lambda_handler(event, context):
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651631462"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651631462"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651631462"></script>
-    <script src="/js/jquery.sticky.js?1651631462"></script>
-    <script src="/js/featherlight.min.js?1651631462"></script>
-    <script src="/js/highlight.pack.js?1651631462"></script>
+    <script src="/js/clipboard.min.js?1651633830"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651633830"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651633830"></script>
+    <script src="/js/jquery.sticky.js?1651633830"></script>
+    <script src="/js/featherlight.min.js?1651633830"></script>
+    <script src="/js/highlight.pack.js?1651633830"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651631462"></script>
-    <script src="/js/learn.js?1651631462"></script>
-    <script src="/js/hugo-learn.js?1651631462"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651633830"></script>
+    <script src="/js/learn.js?1651633830"></script>
+    <script src="/js/hugo-learn.js?1651633830"></script>
 
-    <link href="/mermaid/mermaid.css?1651631462" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1651631462"></script>
+    <link href="/mermaid/mermaid.css?1651633830" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1651633830"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
