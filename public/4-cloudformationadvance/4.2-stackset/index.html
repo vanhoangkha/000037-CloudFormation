@@ -12,21 +12,21 @@
     <title>Mappings and Stacksets :: AWS CloudFormation Workshop</title>
 
     
-    <link href="/css/nucleus.css?1651633830" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651633830" rel="stylesheet">
-    <link href="/css/hybrid.css?1651633830" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651633830" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651633830" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651633830" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651633830" rel="stylesheet">
-    <link href="/css/theme.css?1651633830" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651633830" rel="stylesheet">
+    <link href="/css/nucleus.css?1652262014" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1652262014" rel="stylesheet">
+    <link href="/css/hybrid.css?1652262014" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1652262014" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1652262014" rel="stylesheet">
+    <link href="/css/auto-complete.css?1652262014" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1652262014" rel="stylesheet">
+    <link href="/css/theme.css?1652262014" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1652262014" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1651633830" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1652262014" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1651633830"></script>
+    <script src="/js/jquery-3.3.1.min.js?1652262014"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651633830"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651633830"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1652262014"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1652262014"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651633830"></script>
+<script type="text/javascript" src="/js/search.js?1652262014"></script>
 
     
   </div>
@@ -836,6 +836,93 @@ Parameters:
 <li>In the <strong>Prerequisite</strong> interface</li>
 </ol>
 <ul>
+<li>Create a yaml file named <strong>mapping_stackset_ec2.yml</strong></li>
+<li>Copy the following code into the file <strong>mapping_stackset_ec2.yml</strong></li>
+</ul>
+<pre tabindex="0"><code>AWSTemplateFormatVersion: 2010-09-09
+Description: This YAML template provisions an Amazon Linux 2 AMI and installs httpd to demonstrate proper operation in various AWS regions
+Parameters:
+    SourceAccessCIDR:
+      Type: String
+      Description: The CIDR IP range that is permitted to access the instance. We recommend that you set this value to a trusted IP range.
+      Default: 0.0.0.0/0
+Mappings:
+# Mapping of Amazon Linux 2 AMI IDs in every AWS Region
+# When deploying a StackSet, the template will automatically deploy the proper AMI in each selected region
+  RegionMap:
+    us-east-1: 
+      AMI: ami-04681a1dbd79675a5
+    us-east-2: 
+      AMI: ami-0cf31d971a3ca20d6
+    us-west-1:
+      AMI: ami-0782017a917e973e7
+    us-west-2:
+      AMI: ami-6cd6f714
+    ap-south-1:
+      AMI: ami-00b6a8a2bd28daf19
+    ap-northeast-3:
+      AMI: ami-00f7ef6bf92e8f916
+    ap-northeast-2:
+      AMI: ami-012566705322e9a8e
+    ap-southeast-1:
+      AMI: ami-01da99628f381e50a
+    ap-southeast-2:
+      AMI: ami-00e17d1165b9dd3ec
+    ap-northeast-1:
+      AMI: ami-08847abae18baa040
+    ca-central-1:
+      AMI: ami-ce1b96aa
+    eu-central-1:
+      AMI: ami-0f5dbc86dd9cbf7a8
+    eu-west-1:
+      AMI: ami-0bdb1d6c15a40392c
+    eu-west-2:
+      AMI: ami-e1768386
+    eu-west-3:
+      AMI: ami-06340c8c12baa6a09
+    sa-east-1:
+      AMI: ami-0ad7b0031d41ed4b9
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: !FindInMap
+      # !FindInMap will search the above RegionMap and automatically pick the proper AMI ID based on the region where this templte is being deployed
+        - RegionMap
+        - !Ref &#39;AWS::Region&#39;
+        - AMI
+      SecurityGroupIds:
+        - !Ref EC2InstanceSG
+      UserData:
+        &#39;Fn::Base64&#39;: !Sub |
+          #!/bin/bash -ex
+          sudo yum install httpd -y
+          echo &#39;&lt;html&gt;&lt;h1&gt;Your CloudFormation stack successfully deployed in ${AWS::Region}!&lt;/h1&gt;&lt;/html&gt;&#39; &gt;/var/www/html/index.html
+          service httpd start
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}
+  EC2InstanceSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+        GroupDescription: This SG allows you to verify the webserver is operational by allowing HTTP (TCP 80) traffic from your location
+        Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}
+        SecurityGroupIngress:
+          -
+            Description: Permits HTTP traffic to validate that the installed webserver is operational.
+            CidrIp: !Ref SourceAccessCIDR
+            FromPort: 80
+            IpProtocol: tcp
+            ToPort: 80
+Outputs:
+  Website:
+    Description: Webserver URL
+    Value: !Sub &#39;http://${MyEC2Instance.PublicDnsName}&#39;
+</code></pre><ul>
+<li>Save the file <strong>mapping_stackset_ec2.yml</strong></li>
 <li>Select <strong>Template is ready</strong></li>
 <li><strong>Template source</strong>, select <strong>Upload a template file</strong></li>
 <li>Select <strong>Choose file</strong></li>
@@ -1237,19 +1324,19 @@ Parameters:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651633830"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651633830"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651633830"></script>
-    <script src="/js/jquery.sticky.js?1651633830"></script>
-    <script src="/js/featherlight.min.js?1651633830"></script>
-    <script src="/js/highlight.pack.js?1651633830"></script>
+    <script src="/js/clipboard.min.js?1652262014"></script>
+    <script src="/js/perfect-scrollbar.min.js?1652262014"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1652262014"></script>
+    <script src="/js/jquery.sticky.js?1652262014"></script>
+    <script src="/js/featherlight.min.js?1652262014"></script>
+    <script src="/js/highlight.pack.js?1652262014"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651633830"></script>
-    <script src="/js/learn.js?1651633830"></script>
-    <script src="/js/hugo-learn.js?1651633830"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1652262014"></script>
+    <script src="/js/learn.js?1652262014"></script>
+    <script src="/js/hugo-learn.js?1652262014"></script>
 
-    <link href="/mermaid/mermaid.css?1651633830" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1651633830"></script>
+    <link href="/mermaid/mermaid.css?1652262014" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1652262014"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

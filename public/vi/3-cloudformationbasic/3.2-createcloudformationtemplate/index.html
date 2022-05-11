@@ -12,21 +12,21 @@
     <title>Tạo CloudFormation Template :: AWS CloudFormation Workshop</title>
 
     
-    <link href="/css/nucleus.css?1651633830" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651633830" rel="stylesheet">
-    <link href="/css/hybrid.css?1651633830" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651633830" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651633830" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651633830" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651633830" rel="stylesheet">
-    <link href="/css/theme.css?1651633830" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651633830" rel="stylesheet">
+    <link href="/css/nucleus.css?1652262014" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1652262014" rel="stylesheet">
+    <link href="/css/hybrid.css?1652262014" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1652262014" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1652262014" rel="stylesheet">
+    <link href="/css/auto-complete.css?1652262014" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1652262014" rel="stylesheet">
+    <link href="/css/theme.css?1652262014" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1652262014" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1651633830" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1652262014" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1651633830"></script>
+    <script src="/js/jquery-3.3.1.min.js?1652262014"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651633830"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651633830"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1652262014"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1652262014"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651633830"></script>
+<script type="text/javascript" src="/js/search.js?1652262014"></script>
 
     
   </div>
@@ -1097,9 +1097,11 @@ Outputs:
 <li>Sau khi Cloud9 server đã có đủ quyền thực hiện việc tạo các Resource với CloudFormation, trên cửa sổ terminal, chạy lệnh:</li>
 </ol>
 <ul>
-<li>Bạn thay thế <strong>VPC ID</strong> và <strong>Subnet ID</strong> vào lệnh</li>
+<li>Bạn thay thế <strong>VPC ID</strong> và <strong>Subnet ID</strong> vào lệnh.</li>
+<li><strong>ParameterValue</strong> của  <strong>ParameterKey=SubnetID</strong> thay bằng <strong>Subnet ID</strong> của ở bước 17</li>
+<li><strong>ParameterValue</strong> của  <strong>ParameterKey=VPCID</strong> thay bằng <strong>VPCID</strong> của ở bước 16</li>
 </ul>
-<pre tabindex="0"><code>aws cloudformation create-stack --stack-name asg-cloudformation-stack --template-body file://singleec2instance.yaml --parameters ParameterKey=SubnetID,ParameterValue=&#34;Subnet ID&#34; ParameterKey=VPCID ParameterValue=&#34;VPC ID&#34; --capabilities CAPABILITY_IAM --region us-east-1
+<pre tabindex="0"><code>aws cloudformation create-stack --stack-name asg-cloudformation-stack --template-body file://singleec2instance.yaml --parameters ParameterKey=SubnetID,ParameterValue=subnet-04c111ad3987c5350 ParameterKey=VPCID,ParameterValue=vpc-0e3f81c05d3920198 --capabilities CAPABILITY_IAM --region us-east-1
 </code></pre><p><img src="/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00018-createcloudformationtemplate.png" alt="Create CloudFormation Template"></p>
 <ol start="19">
 <li>Tiến hành kiểm tra quá trình khởi tạo <strong>CloudFormation Template</strong></li>
@@ -1485,19 +1487,19 @@ Outputs:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651633830"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651633830"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651633830"></script>
-    <script src="/js/jquery.sticky.js?1651633830"></script>
-    <script src="/js/featherlight.min.js?1651633830"></script>
-    <script src="/js/highlight.pack.js?1651633830"></script>
+    <script src="/js/clipboard.min.js?1652262014"></script>
+    <script src="/js/perfect-scrollbar.min.js?1652262014"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1652262014"></script>
+    <script src="/js/jquery.sticky.js?1652262014"></script>
+    <script src="/js/featherlight.min.js?1652262014"></script>
+    <script src="/js/highlight.pack.js?1652262014"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651633830"></script>
-    <script src="/js/learn.js?1651633830"></script>
-    <script src="/js/hugo-learn.js?1651633830"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1652262014"></script>
+    <script src="/js/learn.js?1652262014"></script>
+    <script src="/js/hugo-learn.js?1652262014"></script>
 
-    <link href="/mermaid/mermaid.css?1651633830" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1651633830"></script>
+    <link href="/mermaid/mermaid.css?1652262014" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1652262014"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

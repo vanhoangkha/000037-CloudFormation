@@ -416,12 +416,14 @@ cfn-lint singleec2instance.yaml
 
 ![Create CloudFormation Template](/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00017-createcloudformationtemplate.png)
 
-18. After the Cloud9 server has enough permission to create Resources with CloudFormation, on the terminal window, run the command:
+18.  After the Cloud9 server has enough permission to create Resources with CloudFormation, on the terminal window, run the command:
 
-- You replace **VPC ID** and **Subnet ID** in the command
+- You replace **VPC ID** and **Subnet ID** in the command.
+- **ParameterValue** of **ParameterKey=SubnetID** replace with **Subnet ID** of step 17
+- **ParameterValue** of **ParameterKey=VPCID** replaced with **VPCID** of step 16
 
 ```
-aws cloudformation create-stack --stack-name asg-cloudformation-stack --template-body file://singleec2instance.yaml --parameters ParameterKey=SubnetID,ParameterValue="Subnet ID" ParameterKey=VPCID ParameterValue="VPC ID" - -capabilities CAPABILITY_IAM --region us-east-1
+aws cloudformation create-stack --stack-name asg-cloudformation-stack --template-body file://singleec2instance.yaml --parameters ParameterKey=SubnetID,ParameterValue=subnet-04c111ad3987c5350 ParameterKey=VPCID,ParameterValue=vpc-0e3f81c05d3920198 --capabilities CAPABILITY_IAM --region us-east-1
 ```
 
 ![Create CloudFormation Template](/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00018-createcloudformationtemplate.png)

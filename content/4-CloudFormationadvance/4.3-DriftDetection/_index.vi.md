@@ -125,9 +125,9 @@ Resources:
 
 ![Drift  Detection](/images/4-CloudFormationadvance/4.3-DriftDetection/00012-driftdetection.png)
 
-13. Trong giao diện *Configuration**
+13. Trong giao diện **Configuration**
 
-- *Visibility timeout**, nhập ```50```
+- **Visibility timeout**, nhập ```50```
 - **Delivery delay**, nhập ```120```
 
 ![Drift  Detection](/images/4-CloudFormationadvance/4.3-DriftDetection/00013-driftdetection.png)

@@ -421,15 +421,17 @@ cfn-lint singleec2instance.yaml
 
 18.  Sau khi Cloud9 server đã có đủ quyền thực hiện việc tạo các Resource với CloudFormation, trên cửa sổ terminal, chạy lệnh:
 
-- Bạn thay thế **VPC ID** và **Subnet ID** vào lệnh
+- Bạn thay thế **VPC ID** và **Subnet ID** vào lệnh. 
+- **ParameterValue** của  **ParameterKey=SubnetID** thay bằng **Subnet ID** của ở bước 17
+- **ParameterValue** của  **ParameterKey=VPCID** thay bằng **VPCID** của ở bước 16
 
 ```
-aws cloudformation create-stack --stack-name asg-cloudformation-stack --template-body file://singleec2instance.yaml --parameters ParameterKey=SubnetID,ParameterValue="Subnet ID" ParameterKey=VPCID ParameterValue="VPC ID" --capabilities CAPABILITY_IAM --region us-east-1
+aws cloudformation create-stack --stack-name asg-cloudformation-stack --template-body file://singleec2instance.yaml --parameters ParameterKey=SubnetID,ParameterValue=subnet-04c111ad3987c5350 ParameterKey=VPCID,ParameterValue=vpc-0e3f81c05d3920198 --capabilities CAPABILITY_IAM --region us-east-1
 ```
 
 ![Create CloudFormation Template](/images/3-CloudFormationbasic/3.2-CreateCloudFormationTemplate/00018-createcloudformationtemplate.png)
 
-19. Tiến hành kiểm tra quá trình khởi tạo **CloudFormation Template**
+19.  Tiến hành kiểm tra quá trình khởi tạo **CloudFormation Template**
 
 - Truy cập [AWS Management Console](https://aws.amazon.com/console/)
 - Tìm **CloudFormation**

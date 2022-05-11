@@ -15,7 +15,7 @@ AWS Cloud9 - Cloud9 is a web-based IDE (accessible via browser) that allows you 
 
 The basic Cloud9 package includes the necessary tools for popular programming languages ​​such as JavaScript, Python, PHP, ..,
 
-![CloudFormation](../images/serviceicon.png?featherlight=false&width=10pc)
+{{< figure src="../images/serviceicon.png" title="AWS CloudFormation" width=150pc >}}
 
 #### Content
 

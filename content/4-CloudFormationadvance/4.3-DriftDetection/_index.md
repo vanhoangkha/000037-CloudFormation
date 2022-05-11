@@ -125,9 +125,9 @@ Resources:
 
 ![Drift Detection](/images/4-CloudFormationadvance/4.3-DriftDetection/00012-driftdetection.png)
 
-13. In the *Configuration** interface
+13. In the **Configuration** interface
 
-- *Visibility timeout**, enter ```50```
+- **Visibility timeout**, enter ```50```
 - **Delivery delay**, enter ```120```
 
 ![Drift Detection](/images/4-CloudFormationadvance/4.3-DriftDetection/00013-driftdetection.png)
