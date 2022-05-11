@@ -82,7 +82,7 @@ Parameters:
     MinLength: 9
     MaxLength: 18
     Default: 0.0.0.0/0
-    AllowedPattern: "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3 })/(\\d{1,2})"
+    AllowedPattern: "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})"
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
   VPCID:
     Description: ID of the target VPC (e.g., vpc-0343606e).
