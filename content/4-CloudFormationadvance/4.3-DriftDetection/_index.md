@@ -73,7 +73,7 @@ Resources:
 
 ![Drift Detection](/images/4-CloudFormationadvance/4.3-DriftDetection/0005-driftdetection.png)
 
-6. Select **Create stack**
+6. Select **Submit**
 
 ![Drift Detection](/images/4-CloudFormationadvance/4.3-DriftDetection/0006-driftdetection.png)
 

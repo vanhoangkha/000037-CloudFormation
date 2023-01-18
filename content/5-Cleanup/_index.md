@@ -11,7 +11,9 @@ pre : " <b> 5. </b> "
 1. Select **Region** containing the environment to delete
 2. In the **Cloud9** interface select the environment to delete
 3. Select **Delete**
+![Clean](/images/5-CleanUpResources/1.png)
 4. Verify environment deletion by entering **Delete** and selecting **Delete**
+![Clean](/images/5-CleanUpResources/2.png)
 
 #### Delete a stack on the AWS CloudFormation console
 
@@ -21,6 +23,7 @@ pre : " <b> 5. </b> "
 4. Select **Delete**
 5. Verify clearing stack
 6. Wait a few minutes for the stack to change state to **DELETE_COMPLETE** to be deleted successfully
+![Clean](/images/5-CleanUpResources/3.png)
 
 #### Delete a stack set
 

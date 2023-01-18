@@ -136,7 +136,7 @@ pre : " <b> 4.1.1 </b> "
 
 - Select **Author from scratch**
 - **Function name**, enter ```ssh-key-gen```
-- **Run time**, select **Python 3.6**
+- **Run time**, select **Python 3.9**
 - Select **x86_64**
 
 ![Create Lambda Function](/images/4-CloudFormationadvance/4.1-Customresource/4.1.1-CreateLambdaFunction/00015-createlambdafunction.png)

@@ -23,20 +23,23 @@ pre : " <b> 3.1 </b> "
 3. In the **Create environment** interface
 
 - **Name**, enter ```ASG-Cloud9-Workshop```
-- Select **Next step**
+
 
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/0003-createawscloud9.png)
 
+4. Next Step
+
 5. In **Network settings**
 
+- Select **AWS SSM**
 - Select **Network (VPC)**
 - Select **Public subnet**
-- Select **Next step**
+
 
 
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/0005-createawscloud9.png)
 
-6. Select **Create environment**
+6. Select **Create**
 
 
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/0006-createawscloud9.png)
@@ -114,6 +117,10 @@ cfn-lint --version
 
 17. Install **taskcat**
 
+```
+pip install taskcat
+```
+
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/00017-createawscloud9.png)
 
 
@@ -128,6 +135,14 @@ export AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].Z
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/00018-createawscloud9.png)
 
 19. We will save the configuration information to bash_profile
+
+```
+echo "export ACCOUNT_ID=$ACCOUNT_ID" | tee -a ~/.bash_profile
+echo "export AWS_REGION=$AWS_REGION" | tee -a ~/.bash_profile
+echo "export AZS=${AZS[@]}" | tee -a ~/.bash_profile
+aws configure set default.region $AWS_REGION
+aws configure get default.region
+```
 
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/00019-createawscloud9.png)
 

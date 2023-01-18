@@ -11,7 +11,9 @@ pre : " <b> 5. </b> "
 1. Chọn **Region** chứa môi trường cần xóa
 2. Trong giao diện **Cloud9** chọn môi trường cần xóa
 3. Chọn **Delete**
+![Clean](/images/5-CleanUpResources/1.png)
 4. Xác thực xóa môi trường bằng cách điền **Delete** và chọn **Delete**
+![Clean](/images/5-CleanUpResources/2.png)
 
 #### Delete a stack on the AWS CloudFormation console
 
@@ -21,6 +23,8 @@ pre : " <b> 5. </b> "
 4. Chọn **Delete**
 5. Xác minh xóa stack
 6. Đợi vài phút stack chuyển trạng thái sang **DELETE_COMPLETE** là xóa thành công
+![Clean](/images/5-CleanUpResources/3.png)
+
 
 #### Delete a stack set
 

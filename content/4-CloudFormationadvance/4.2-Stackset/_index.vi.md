@@ -262,17 +262,17 @@ Outputs:
 
 ![Stacksets](/images/4-CloudFormationadvance/4.2-Stackset/00018-stackset.png)
 
-19. Cả 2 Region đều được triển khai StackSet thành công
+19. Region bạn chọn đều được triển khai StackSet thành công
 
 ![Stacksets](/images/4-CloudFormationadvance/4.2-Stackset/00019-stackset.png)
 
 20. Trong giao diện **CloudFormation**
 
-- Chọn Region **Europe (Frankfurt)**
+- Chọn Region **Asia Pacific-Tokyo**
 
 ![Stacksets](/images/4-CloudFormationadvance/4.2-Stackset/00020-stackset.png)
 
-21. Trong Region **Europe (Frankfurt)**
+21. Trong Region **Asia Pacific-Tokyo**
 
 - Chọn **CloudFormation**
 - Chọn **Stack**

@@ -97,19 +97,19 @@ Parameters:
 
 ![Stacksets](/images/4-CloudFormationadvance/4.2-Stackset/0006-stackset.png)
 
-7. Trong giao diện **Create stack**
+7. In the **Create stack** interface
 
-- Chọn **I acknowledge that AWS CloudFormation might create IAM resources with custom names**
-- Chọn **I acknowledge that AWS CloudFormation might require the following capability: CAPABILITY_AUTO_EXPAND**
-- Chọn **Create stack**
+- Select **I acknowledge that AWS CloudFormation might create IAM resources with custom names**
+- Select **I acknowledge that AWS CloudFormation might require the following capability: CAPABILITY_AUTO_EXPAND**
+- Select **Create stack**
 
 ![Stacksets](/images/4-CloudFormationadvance/4.2-Stackset/0007-stackset.png)
 
-8. Khoảng vài phút sau, 2 CloudFormation template đã được tạo thành công cùng với Stack.
+8. About a few minutes later, two CloudFormation templates were successfully created along with the Stack.
 
 ![Stacksets](/images/4-CloudFormationadvance/4.2-Stackset/0008-stackset.png)
 
-9. Trong giao diện **CloudFormation**
+9. In the **CloudFormation** interface
 
 - Chọn **Stackset**
 - Xem giao diện **Stackset**
@@ -117,7 +117,7 @@ Parameters:
 
 ![Stacksets](/images/4-CloudFormationadvance/4.2-Stackset/0009-stackset.png)
 
-10. Trong giao diện **Choose a template**
+10. In the **Choose a template** interface
 
 - Bước **Permissions**, chọn **IAM role name**
 - Chọn **IAM execution role name**
@@ -262,17 +262,17 @@ Outputs:
 
 ![Stacksets](/images/4-CloudFormationadvance/4.2-Stackset/00018-stackset.png)
 
-19. Both Regions have been successfully deployed StackSet
+19. Regions have been successfully deployed StackSet
 
 ![Stacksets](/images/4-CloudFormationadvance/4.2-Stackset/00019-stackset.png)
 
 20. In the **CloudFormation** interface
 
-- Select Region **Europe (Frankfurt)**
+- Select Region **Asia Pacific-Tokyo**
 
 ![Stacksets](/images/4-CloudFormationadvance/4.2-Stackset/00020-stackset.png)
 
-21. In Region **Europe (Frankfurt)**
+21. In Region **Asia Pacific-Tokyo**
 
 - Select **CloudFormation**
 - Select **Stack**

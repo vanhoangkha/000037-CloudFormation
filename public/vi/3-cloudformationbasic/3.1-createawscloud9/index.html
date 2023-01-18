@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.97.3" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Tạo Workspace :: AWS CloudFormation Workshop</title>
 
     
-    <link href="/css/nucleus.css?1652285484" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1652285484" rel="stylesheet">
-    <link href="/css/hybrid.css?1652285484" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1652285484" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1652285484" rel="stylesheet">
-    <link href="/css/auto-complete.css?1652285484" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1652285484" rel="stylesheet">
-    <link href="/css/theme.css?1652285484" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1652285484" rel="stylesheet">
+    <link href="/css/nucleus.css?1674062776" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1674062776" rel="stylesheet">
+    <link href="/css/hybrid.css?1674062776" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1674062776" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1674062776" rel="stylesheet">
+    <link href="/css/auto-complete.css?1674062776" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1674062776" rel="stylesheet">
+    <link href="/css/theme.css?1674062776" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1674062776" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1652285484" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1674062776" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1652285484"></script>
+    <script src="/js/jquery-3.3.1.min.js?1674062776"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1652285484"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1652285484"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1674062776"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1674062776"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1652285484"></script>
+<script type="text/javascript" src="/js/search.js?1674062776"></script>
 
     
   </div>
@@ -619,7 +619,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>04-05-2022</font></i>
+        <i><font color=orange>19-01-2023</font></i>
     </left>
     <left>
         <br>
@@ -738,11 +738,10 @@
 </ol>
 <ul>
 <li><strong>Name</strong>, nhập <code>ASG-Cloud9-Workshop</code></li>
-<li>Chọn <strong>Next step</strong></li>
 </ul>
 <p><img src="/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/0003-createawscloud9.png" alt="CreateAWSCloud9"></p>
 <ol start="4">
-<li>Trong phần <strong>Configure settings</strong></li>
+<li>Trong phần tiếp theo</li>
 </ol>
 <ul>
 <li>
@@ -781,13 +780,13 @@
 <li>Trong <strong>Network settings</strong></li>
 </ol>
 <ul>
+<li>Chọn <strong>AWS SSM</strong></li>
 <li>Chọn <strong>Network (VPC)</strong></li>
 <li>Chọn <strong>Public subnet</strong></li>
-<li>Chọn <strong>Next step</strong></li>
 </ul>
 <p><img src="/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/0005-createawscloud9.png" alt="CreateAWSCloud9"></p>
 <ol start="6">
-<li>Chọn <strong>Create environment</strong></li>
+<li>Chọn <strong>Create</strong></li>
 </ol>
 <p><img src="/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/0006-createawscloud9.png" alt="CreateAWSCloud9"></p>
 <ol start="7">
@@ -858,7 +857,8 @@
 <ol start="17">
 <li>Cài đặt <strong>taskcat</strong></li>
 </ol>
-<p><img src="/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/00017-createawscloud9.png" alt="CreateAWSCloud9"></p>
+<pre tabindex="0"><code>pip install taskcat
+</code></pre><p><img src="/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/00017-createawscloud9.png" alt="CreateAWSCloud9"></p>
 <ol start="18">
 <li>Chúng ta sẽ cấu hình aws cli sử dụng Region hiện tại.</li>
 </ol>
@@ -869,7 +869,12 @@ export AZS=($(aws ec2 describe-availability-zones --query &#39;AvailabilityZones
 <ol start="19">
 <li>Chúng ta sẽ lưu các thông tin cấu hình vào bash_profile</li>
 </ol>
-<p><img src="/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/00019-createawscloud9.png" alt="CreateAWSCloud9"></p>
+<pre tabindex="0"><code>echo &#34;export ACCOUNT_ID=$ACCOUNT_ID&#34; | tee -a ~/.bash_profile
+echo &#34;export AWS_REGION=$AWS_REGION&#34; | tee -a ~/.bash_profile
+echo &#34;export AZS=${AZS[@]}&#34; | tee -a ~/.bash_profile
+aws configure set default.region $AWS_REGION
+aws configure get default.region
+</code></pre><p><img src="/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/00019-createawscloud9.png" alt="CreateAWSCloud9"></p>
 <ol start="20">
 <li>Chúng ta sẽ sử dụng câu lệnh để kiểm tra Cloud9 IDE đang sử dụng IAM Role có chính xác không.</li>
 </ol>
@@ -1188,19 +1193,19 @@ export AZS=($(aws ec2 describe-availability-zones --query &#39;AvailabilityZones
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1652285484"></script>
-    <script src="/js/perfect-scrollbar.min.js?1652285484"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1652285484"></script>
-    <script src="/js/jquery.sticky.js?1652285484"></script>
-    <script src="/js/featherlight.min.js?1652285484"></script>
-    <script src="/js/highlight.pack.js?1652285484"></script>
+    <script src="/js/clipboard.min.js?1674062776"></script>
+    <script src="/js/perfect-scrollbar.min.js?1674062776"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1674062776"></script>
+    <script src="/js/jquery.sticky.js?1674062776"></script>
+    <script src="/js/featherlight.min.js?1674062776"></script>
+    <script src="/js/highlight.pack.js?1674062776"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1652285484"></script>
-    <script src="/js/learn.js?1652285484"></script>
-    <script src="/js/hugo-learn.js?1652285484"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1674062776"></script>
+    <script src="/js/learn.js?1674062776"></script>
+    <script src="/js/hugo-learn.js?1674062776"></script>
 
-    <link href="/mermaid/mermaid.css?1652285484" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1652285484"></script>
+    <link href="/mermaid/mermaid.css?1674062776" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1674062776"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

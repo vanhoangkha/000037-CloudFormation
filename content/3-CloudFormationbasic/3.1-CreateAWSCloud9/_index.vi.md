@@ -22,11 +22,10 @@ pre : " <b> 3.1 </b> "
 3. Trong giao diện **Create environment**
 
 - **Name**, nhập ```ASG-Cloud9-Workshop```
-- Chọn **Next step**
 
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/0003-createawscloud9.png)
 
-4. Trong phần **Configure settings**
+4. Trong phần tiếp theo
 
 - **Create a new EC2 instance for environment (direct access)**: EC2 Instance được khởi tạo cùng với Cloud9 environment. Instance được truy cập qua Cloud9 IDE sử dụng phương thức SSH.
 
@@ -50,14 +49,15 @@ pre : " <b> 3.1 </b> "
 
 5. Trong **Network settings**
 
+- Chọn **AWS SSM**
 - Chọn **Network (VPC)**
 - Chọn **Public subnet**
-- Chọn **Next step**
+
 
 
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/0005-createawscloud9.png)
 
-6. Chọn **Create environment**
+6. Chọn **Create**
 
 
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/0006-createawscloud9.png)
@@ -135,6 +135,10 @@ cfn-lint --version
 
 17. Cài đặt **taskcat**
 
+```
+pip install taskcat
+```
+
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/00017-createawscloud9.png)
 
 
@@ -149,6 +153,14 @@ export AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].Z
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/00018-createawscloud9.png)
 
 19. Chúng ta sẽ lưu các thông tin cấu hình vào bash_profile
+
+```
+echo "export ACCOUNT_ID=$ACCOUNT_ID" | tee -a ~/.bash_profile
+echo "export AWS_REGION=$AWS_REGION" | tee -a ~/.bash_profile
+echo "export AZS=${AZS[@]}" | tee -a ~/.bash_profile
+aws configure set default.region $AWS_REGION
+aws configure get default.region
+```
 
 ![CreateAWSCloud9](/images/3-CloudFormationbasic/3.1-CreateAWSCloud9/00019-createawscloud9.png)
 
