@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Drift Detection on AWS CloudFormation Workshop</title>
+    <title>Drift Detection on AWS CLOUDFORMATION</title>
     <link>/4-cloudformationadvance/4.3-driftdetection/</link>
-    <description>Recent content in Drift Detection on AWS CloudFormation Workshop</description>
+    <description>Recent content in Drift Detection on AWS CLOUDFORMATION</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/4-cloudformationadvance/4.3-driftdetection/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
