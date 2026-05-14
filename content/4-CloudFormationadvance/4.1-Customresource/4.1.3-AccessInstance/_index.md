@@ -1,6 +1,6 @@
 ---
 title : "Connecting EC2 Instance"
-date : "`r Sys.Date()`"
+date: 2024-01-01
 weight : 3
 chapter : false
 pre : " <b> 4.1.3 </b> "
